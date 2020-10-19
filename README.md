@@ -1,2 +1,8 @@
 Term Project (SP444 Advanced Web Programming) 
-เว็บแอพพลิเคชั่นค้นหา ร้านอาหาร ร้านค้า โรงแรม ด้วยชื่อ
+Web Application Discover Place 
+Features
+- Find Restaurants Shopping Hotels
+- Find Event
+- Featured Restaurants Shopping Hotels
+- Featured Event
+- Featured City
