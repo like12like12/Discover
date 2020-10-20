@@ -8,4 +8,4 @@
 - Featured
 - List
 - Contact
-- 
+- Map
