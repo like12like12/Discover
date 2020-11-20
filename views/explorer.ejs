@@ -357,10 +357,14 @@
     <script src="js/active.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-alert(qwer);
+            const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const a = urlParams.get('keyword')
+            console.log(a);
+            alert(a);
         })
       </script>
-    <script>
+    <!-- <script>
         function myFunction() {
             $.ajaxSetup({
                 headers : {
@@ -382,7 +386,7 @@ alert(qwer);
             // document.getElementById("speed").innerHTML = "&nbsp&nbsp&nbspความเร็วลม : "+JSON.stringify(result.wind.speed);
             });
             }
-    </script>
+    </script> -->
 </body>
 
 </html>
