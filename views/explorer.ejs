@@ -243,15 +243,15 @@
             <div class="explore-search-result">
                 <!-- Single Features Area -->
                 <div class="single-features-area">
-                    <img src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P02000185_3.jpeg" alt="">
+                    <img id="obj13" src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P02000185_3.jpeg" alt="">
                     <!-- Price -->
-                    <div class="price-start">
+                    <!-- <div class="price-start">
                         <p>FROM 2800-9000 THB</p>
-                    </div>
+                    </div> -->
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
-                            <h5 id="name1">Lantana Resort</h5>
-                            <p>Bangkok</p>
+                            <h5 id="obj11" href="#">Lantana Resort</h5>
+                            <p id="obj12">Bangkok</p>
                         </div>
                         <div class="feature-favourite">
                             <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
@@ -262,9 +262,9 @@
                 <div class="single-features-area">
                     <img src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P02012360_1.jpg" alt="">
                     <!-- Price -->
-                    <div class="price-start">
+                    <!-- <div class="price-start">
                         <p>FROM 500-3000 THB</p>
-                    </div>
+                    </div> -->
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
                             <h5>The Countryside Resort</h5>
@@ -279,9 +279,9 @@
                 <div class="single-features-area">
                     <img src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg" alt="">
                     <!-- Price -->
-                    <div class="price-start">
+                    <!-- <div class="price-start">
                         <p>FROM 1000-3000 THB</p>
-                    </div>
+                    </div> -->
                         <div class="feature-content d-flex align-items-center justify-content-between">
                                 <div class="feature-title">
                                     <h5>Krabifrontbay Resort</h5>
@@ -358,36 +358,30 @@
     <script type="text/javascript">
         $(document).ready(function() {
             const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const keyword = urlParams.get('keyword');
-const city = urlParams.get('city');
-const type = urlParams.get('type');
-document.getElementById('keyword').value = keyword;
-document.getElementById('city').value = city;
-document.getElementById('type').value = type;
-myFunction();
+            const urlParams = new URLSearchParams(queryString);
+            const keyword = urlParams.get('keyword');
+            const city = urlParams.get('city');
+            const type = urlParams.get('type');
+            document.getElementById('keyword').value = keyword;
+            document.getElementById('city').value = city;
+            document.getElementById('type').value = type;
+            getapi();
         })
       </script>
     <script>
-        function myFunction() {
+        function getapi() {
             $.ajaxSetup({
                 headers : {
                     'Authorization' : 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
                     'Accept-Language' : 'th'
                 }
             });
-            $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword="+keyword+"&categories="+type+"&provinceName="+city+"&numberOfResult=100", function(result){
-            console.log(result)
-            document.getElementById("name1").innerHTML = "testetets"
-            // var obj = JSON.stringify(result.weather.description);
-            // document.getElementById("coord").innerHTML = "&nbsp&nbsp&nbspสถานที่ตั้ง ละติจูด: "+JSON.stringify(result.coord.lon)+" ลองติจูด: "+JSON.stringify(result.coord.lat);
-            // document.getElementById("description").innerHTML = "&nbsp&nbsp&nbspสภาพอากาศ: "+(JSON.stringify(result.weather[0].description)).slice(1, -1);;
-            // document.getElementById("temp").innerHTML = "&nbsp&nbsp&nbspอุณหภูมิ: "+JSON.stringify(result.main.temp)+" °C";
-            // document.getElementById("temp_min").innerHTML = "&nbsp&nbsp&nbspอุณหภูมิต่ำสุด: "+JSON.stringify(result.main.temp_min)+" °C";
-            // document.getElementById("temp_max").innerHTML = "&nbsp&nbsp&nbspอุณหภูมิสูงสุด: "+JSON.stringify(result.main.temp_max)+" °C";
-            // document.getElementById("pressure").innerHTML = "&nbsp&nbsp&nbspความดันอากาศ: "+JSON.stringify(result.main.pressure)+" Pa";
-            // document.getElementById("humidity").innerHTML = "&nbsp&nbsp&nbspความชื้น: "+JSON.stringify(result.main.humidity)+" %";
-            // document.getElementById("speed").innerHTML = "&nbsp&nbsp&nbspความเร็วลม : "+JSON.stringify(result.wind.speed);
+            $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword="+keyword+"&categories="+type+"&provinceName="+city+"&numberOfResult=100", function(json){
+            console.log(json)
+            document.getElementById("obj11").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
+            document.getElementById("obj12").innerHTML = JSON.stringify(json.result[0].destination).slice(1, -1)
+            document.getElementById("obj13").src = JSON.stringify(json.result[0].thumbnail_url).slice(1, -1)
+            document.getElementById("obj11").href = JSON.stringify(json.result[0].place_id).slice(1, -1)
             });
             }
     </script>
