@@ -127,7 +127,7 @@
                 <!-- Tabs Content -->
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
-                        <form action="#" method="get">
+                        <form action="explorer" method="get">
                             <!-- <div class="col-12 col-md-10">
                                 <input type="text" name="name" class="form-control" placeholder="Keyword">
                             </div> -->
@@ -400,8 +400,8 @@
             const city = urlParams.get('city');
             const type = urlParams.get('type');
             document.getElementById('keyword').value = keyword;
-            document.getElementById('city').value = city;
-            document.getElementById('type').value = type;
+            document.getElementById('city').options.length = city;
+            document.getElementById('type').options.length = type;
             getapi();
         })
     </script>
