@@ -204,19 +204,18 @@
                     <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
                         <form action="#" method="get">
                             <select class="custom-select" id="events-destinations">
-                                <option value="0"selected>Your Destinations</option>
-                                <option value="1">Bangkok</option>
-                                <option value="2">Phra Nakhon Si Ayutthaya</option>
-                                <option value="3">Samut Prakan</option>
-                                <option value="4">Nonthaburi</option>
-                                <option value="5">Pathum Thani</option>
+                                <!-- <option value="0" selected>City Destinations</option> -->
+                                <option value="Bangkok">Bangkok</option>
+                                <option value="Ayutthaya">Ayutthaya</option>
+                                <option value="SamutPrakan">SamutPrakan</option>
+                                <option value="Nonthaburi">Nonthaburi</option>
+                                <option value="PathumThani">PathumThani</option>
                             </select>
                             <select class="custom-select" id="events-catagories">
-                                <option value="0"selected>All Catagories</option>
-                                <option value="1">Catagories 1</option>
-                                <option value="2">Catagories 2</option>
-                                <option value="3">Catagories 3</option>
-                                <option value="3">Catagories 4</option>
+                                <option value="ALL" selected>All Catagories</option>
+                                <option value="RESTAURANT">Restaurants</option>
+                                <option value="SHOP">Shopping</option>
+                                <option value="ACCOMMODATION">Hotels</option>
                             </select>
                             <!-- <select class="custom-select" id="events-price-range">
                                 <option selected>Price Range</option>
@@ -413,7 +412,7 @@
                     'Accept-Language': 'th'
                 }
             });
-            $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword +" &categories=" + type +" &provinceName=" + city +" &numberOfResult=100", function(json) {
+            $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + type + "&provinceName=" + city + "&numberOfResult=100", function(json) {
                 console.log(json)
                 document.getElementById("01").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
                     //document.getElementById("11").href = JSON.stringify(json.result[0].place_id).slice(1, -1)
@@ -439,7 +438,6 @@
                     //document.getElementById("11").href = JSON.stringify(json.result[4].place_id).slice(1, -1)
                 document.getElementById("42").innerHTML = JSON.stringify(json.result[4].destination).slice(1, -1)
                 document.getElementById("43").src = JSON.stringify(json.result[4].thumbnail_url).slice(1, -1)
-                console.log(JSON.stringify(json.result[4].thumbnail_url).slice(1, -1))
 
 
             });
