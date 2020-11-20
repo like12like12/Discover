@@ -127,9 +127,9 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
                                 <h6>What are you looking for?</h6>
-                                <form action="#" method="get">
-                                    <input type="text" name="Keyword" class="form-control custom-select" placeholder="Keyword">
-                                    <select class="custom-select">
+                                <form action="explorer" method="get">
+                                    <input type="text" name="keyword" class="form-control custom-select" placeholder="Keyword">
+                                    <select name="city" class="custom-select">
                                         <option selected>City Destinations</option>
                                         <option value="1">Bangkok</option>
                                         <option value="2">Ayutthaya</option>
@@ -137,7 +137,7 @@
                                         <option value="4">Nonthaburi</option>
                                         <option value="5">Pathum Thani</option>
                                     </select>
-                                    <select class="custom-select">
+                                    <select name="type"class="custom-select">
                                         <option selected>All Catagories</option>
                                         <option value="1">Restaurants</option>
                                         <option value="2">Shopping</option>
@@ -764,9 +764,8 @@
         }
       </script> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script>
+    <!-- <script>
         function myFunction() {
-            alert("test");
             $.ajaxSetup({
                 headers : {
                     'Authorization' : 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
@@ -786,7 +785,7 @@
             // document.getElementById("speed").innerHTML = "&nbsp&nbsp&nbspความเร็วลม : "+JSON.stringify(result.wind.speed);
             });
             }
-    </script>
+    </script> -->
 </body>
 
 </html>

@@ -131,8 +131,8 @@
                             <!-- <div class="col-12 col-md-10">
                                 <input type="text" name="name" class="form-control" placeholder="Keyword">
                             </div> -->
-                            <input type="text" name="Keyword" class="form-control custom-select" placeholder="Keyword">
-                            <select class="custom-select" id="destinations">
+                            <input type="text" name="keyword" class="form-control custom-select" placeholder="Keyword">
+                            <select name="city" class="custom-select" id="destinations">
                                 <option selected>Your Destinations</option>
                                 <option value="1">Bangkok</option>
                                 <option value="2">Phra Nakhon Si Ayutthaya</option>
@@ -140,7 +140,7 @@
                                 <option value="4">Nonthaburi</option>
                                 <option value="5">Pathum Thani</option>
                             </select>
-                            <select class="custom-select" id="catagories">
+                            <select name="type" class="custom-select" id="catagories">
                                 <option selected>All Catagories</option>
                                 <option value="1">Restaurants</option>
                                 <option value="2">Shopping</option>
@@ -355,6 +355,34 @@
     <script src="js/google-map/explore-map-active.js"></script>
     <!-- Active JS -->
     <script src="js/active.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+alert($("#b").val());
+        })
+      </script>
+    <script>
+        function myFunction() {
+            $.ajaxSetup({
+                headers : {
+                    'Authorization' : 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
+                    'Accept-Language' : 'th'
+                }
+            });
+            $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=อาหาร&location=13.6904831,100.5226014&categories=RESTAURANT&provinceName=Bangkok&radius=20&numberOfResult=10&pagenumber=1&destination=Bangkok&filterByUpdateDate=2019/09/01-2021/12/31", function(result){
+            alert(result)
+            document.getElementById("keyword").innerHTML = "1"
+            // var obj = JSON.stringify(result.weather.description);
+            // document.getElementById("coord").innerHTML = "&nbsp&nbsp&nbspสถานที่ตั้ง ละติจูด: "+JSON.stringify(result.coord.lon)+" ลองติจูด: "+JSON.stringify(result.coord.lat);
+            // document.getElementById("description").innerHTML = "&nbsp&nbsp&nbspสภาพอากาศ: "+(JSON.stringify(result.weather[0].description)).slice(1, -1);;
+            // document.getElementById("temp").innerHTML = "&nbsp&nbsp&nbspอุณหภูมิ: "+JSON.stringify(result.main.temp)+" °C";
+            // document.getElementById("temp_min").innerHTML = "&nbsp&nbsp&nbspอุณหภูมิต่ำสุด: "+JSON.stringify(result.main.temp_min)+" °C";
+            // document.getElementById("temp_max").innerHTML = "&nbsp&nbsp&nbspอุณหภูมิสูงสุด: "+JSON.stringify(result.main.temp_max)+" °C";
+            // document.getElementById("pressure").innerHTML = "&nbsp&nbsp&nbspความดันอากาศ: "+JSON.stringify(result.main.pressure)+" Pa";
+            // document.getElementById("humidity").innerHTML = "&nbsp&nbsp&nbspความชื้น: "+JSON.stringify(result.main.humidity)+" %";
+            // document.getElementById("speed").innerHTML = "&nbsp&nbsp&nbspความเร็วลม : "+JSON.stringify(result.wind.speed);
+            });
+            }
+    </script>
 </body>
 
 </html>
