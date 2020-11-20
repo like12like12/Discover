@@ -132,19 +132,19 @@
                                 <input type="text" name="name" class="form-control" placeholder="Keyword">
                             </div> -->
                             <input type="text" name="keyword" id='keyword' class="form-control custom-select" placeholder="Keyword">
-                            <select name="city" id='city' class="custom-select" id="destinations">
-                                <option value="" selected>Your Destinations</option>
-                                <option value="1">Bangkok</option>
-                                <option value="2">Phra Nakhon Si Ayutthaya</option>
-                                <option value="3">Samut Prakan</option>
-                                <option value="4">Nonthaburi</option>
-                                <option value="5">Pathum Thani</option>
+                            <select name="city" class="custom-select">
+                                <option value="0" selected>City Destinations</option>
+                                <option value="Bangkok">Bangkok</option>
+                                <option value="Ayutthaya">Ayutthaya</option>
+                                <option value="SamutPrakan">SamutPrakan</option>
+                                <option value="Nonthaburi">Nonthaburi</option>
+                                <option value="PathumThani">PathumThani</option>
                             </select>
-                            <select name="type" id='type' class="custom-select" id="catagories">
-                                <option value="" selected>All Catagories</option>
-                                <option value="1">Restaurants</option>
-                                <option value="2">Shopping</option>
-                                <option value="3">Hotels</option>
+                            <select name="type" class="custom-select">
+                                <option value="ALL" selected>All Catagories</option>
+                                <option value="RESTAURANT">Restaurants</option>
+                                <option value="SHOP">Shopping</option>
+                                <option value="ACCOMMODATION">Hotels</option>
                             </select>
                             <!-- <select class="custom-select" id="price-range">
                                 <option selected>Price Range</option>
@@ -204,7 +204,7 @@
                     <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
                         <form action="#" method="get">
                             <select class="custom-select" id="events-destinations">
-                                <option selected>Your Destinations</option>
+                                <option value="0"selected>Your Destinations</option>
                                 <option value="1">Bangkok</option>
                                 <option value="2">Phra Nakhon Si Ayutthaya</option>
                                 <option value="3">Samut Prakan</option>
@@ -212,7 +212,7 @@
                                 <option value="5">Pathum Thani</option>
                             </select>
                             <select class="custom-select" id="events-catagories">
-                                <option selected>All Catagories</option>
+                                <option value="0"selected>All Catagories</option>
                                 <option value="1">Catagories 1</option>
                                 <option value="2">Catagories 2</option>
                                 <option value="3">Catagories 3</option>
@@ -238,103 +238,140 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Explore Search Result -->
             <div class="explore-search-result">
                 <!-- Single Features Area -->
                 <div class="single-features-area">
-                    <img id="obj13" src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P02000185_3.jpeg" alt="">
+                    <img id="03" src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P02000185_3.jpeg" alt="">
                     <!-- Price -->
                     <!-- <div class="price-start">
                         <p>FROM 2800-9000 THB</p>
                     </div> -->
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
-                            <h5 id="obj11" href="#">Lantana Resort</h5>
-                            <p id="obj12">Bangkok</p>
+                            <h5 id="01" href="#">Lantana Resort</h5>
+                            <p id="02">Bangkok</p>
                         </div>
-                        <div class="feature-favourite">
-                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                        <div class="feature-favourite ">
+                            <a href="# "><i class="fa fa-heart-o " aria-hidden="true "></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
-                    <img src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P02012360_1.jpg" alt="">
+                <div class="single-features-area ">
+                    <img id="13" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P02012360_1.jpg " alt=" ">
                     <!-- Price -->
-                    <!-- <div class="price-start">
+                    <!-- <div class="price-start ">
                         <p>FROM 500-3000 THB</p>
                     </div> -->
-                    <div class="feature-content d-flex align-items-center justify-content-between">
-                        <div class="feature-title">
-                            <h5>The Countryside Resort</h5>
-                            <p>Maehongson</p>
+                    <div class="feature-content d-flex align-items-center justify-content-between ">
+                        <div class="feature-title ">
+                            <h5 id="11">The Countryside Resort</h5>
+                            <p id="12">Maehongson</p>
                         </div>
-                        <div class="feature-favourite">
-                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                        <div class="feature-favourite ">
+                            <a href="# "><i class="fa fa-heart-o " aria-hidden="true "></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
-                    <img src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg" alt="">
+                <div class="single-features-area ">
+                    <img id="23" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg " alt=" ">
                     <!-- Price -->
-                    <!-- <div class="price-start">
+                    <!-- <div class="price-start ">
                         <p>FROM 1000-3000 THB</p>
                     </div> -->
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Krabifrontbay Resort</h5>
-                                    <p>Krabi</p>
-                                </div>
-                        <div class="feature-favourite">
-                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                    <div class="feature-content d-flex align-items-center justify-content-between ">
+                        <div class="feature-title ">
+                            <h5 id="21">Krabifrontbay Resort</h5>
+                            <p id="22">Krabi</p>
+                        </div>
+                        <div class="feature-favourite ">
+                            <a href="# "><i class="fa fa-heart-o " aria-hidden="true "></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Single Features Area -->
-                <!-- <div class="single-features-area">
-                    <img src="img/bg-img/feature-4.jpg" alt=""> -->
+                <div class="single-features-area ">
+                    <img id="33" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg " alt=" ">
                     <!-- Price -->
-                    <!-- <div class="price-start">
+                    <!-- <div class="price-start ">
+                        <p>FROM 1000-3000 THB</p>
+                    </div> -->
+                    <div class="feature-content d-flex align-items-center justify-content-between ">
+                        <div class="feature-title ">
+                            <h5 id="31">Krabifrontbay Resort</h5>
+                            <p id="32">Krabi</p>
+                        </div>
+                        <div class="feature-favourite ">
+                            <a href="# "><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Features Area -->
+                <div class="single-features-area ">
+                    <img id="43" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg " alt=" ">
+                    <!-- Price -->
+                    <!-- <div class="price-start ">
+                        <p>FROM 1000-3000 THB</p>
+                    </div> -->
+                    <div class="feature-content d-flex align-items-center justify-content-between ">
+                        <div class="feature-title ">
+                            <h5 id="41">Krabifrontbay Resort</h5>
+                            <p id="42">Krabi</p>
+                        </div>
+                        <div class="feature-favourite ">
+                            <a href="# "><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Single Features Area -->
+                <!-- <div class="single-features-area ">
+                    <img src="img/bg-img/feature-4.jpg " alt=" "> -->
+                <!-- Price -->
+                <!-- <div class="price-start ">
                         <p>FROM $59/night</p>
                     </div>
-                    <div class="feature-content d-flex align-items-center justify-content-between">
-                        <div class="feature-title">
+                    <div class="feature-content d-flex align-items-center justify-content-between ">
+                        <div class="feature-title ">
                             <h5>Greece</h5>
                             <p>Sunny</p>
                         </div>
-                        <div class="feature-favourite">
-                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                        <div class="feature-favourite ">
+                            <a href="# "><i class="fa fa-heart-o " aria-hidden="true "></i></a>
                         </div>
                     </div>
                 </div> -->
             </div>
         </div>
         <!-- Explore Map Area -->
-        <div class="explore-map-area">
-            <div id="exploreGoogleMap"></div>
+        <div class="explore-map-area ">
+            <div id="exploreGoogleMap "></div>
         </div>
     </section>
 
     <!-- ****** Footer Area Start ****** -->
-    <footer class="dorne-footer-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 d-md-flex align-items-center justify-content-between">
-                    <div class="footer-text">
+    <footer class="dorne-footer-area ">
+        <div class="container-fluid ">
+            <div class="row ">
+                <div class="col-12 d-md-flex align-items-center justify-content-between ">
+                    <div class="footer-text ">
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o " aria-hidden="true "></i> by <a href="https://colorlib.com
+                                " target="_blank ">Colorlib</a> -->
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
-                    <div class="footer-social-btns">
-                        <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+                    <div class="footer-social-btns ">
+                        <a href="# "><i class="fa fa-linkedin " aria-haspopup="true "></i></a>
+                        <a href="# "><i class="fa fa-behance " aria-hidden="true "></i></a>
+                        <a href="# "><i class="fa fa-dribbble " aria-hidden="true "></i></a>
+                        <a href="# "><i class="fa fa-twitter " aria-haspopup="true "></i></a>
+                        <a href="# "><i class="fa fa-facebook " aria-haspopup="true "></i></a>
                     </div>
                 </div>
             </div>
@@ -343,19 +380,19 @@
     <!-- ****** Footer Area End ****** -->
 
     <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery/jquery-2.2.4.min.js "></script>
     <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/popper.min.js "></script>
     <!-- Bootstrap-4 js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js "></script>
     <!-- All Plugins js -->
-    <script src="js/others/plugins.js"></script>
+    <script src="js/others/plugins.js "></script>
     <!-- Google Maps js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdVg54QthqEizFpV7yGjQCJfHRFP3PnW0"></script>
-    <script src="js/google-map/explore-map-active.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdVg54QthqEizFpV7yGjQCJfHRFP3PnW0 "></script>
+    <script src="js/google-map/explore-map-active.js "></script>
     <!-- Active JS -->
-    <script src="js/active.js"></script>
-    <script type="text/javascript">
+    <script src="js/active.js "></script>
+    <script type="text/javascript ">
         $(document).ready(function() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
@@ -367,23 +404,46 @@
             document.getElementById('type').value = type;
             getapi();
         })
-      </script>
+    </script>
     <script>
         function getapi() {
             $.ajaxSetup({
-                headers : {
-                    'Authorization' : 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
-                    'Accept-Language' : 'th'
+                headers: {
+                    'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
+                    'Accept-Language': 'th'
                 }
             });
-            $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword="+keyword+"&categories="+type+"&provinceName="+city+"&numberOfResult=100", function(json){
-            console.log(json)
-            document.getElementById("obj11").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
-            document.getElementById("obj12").innerHTML = JSON.stringify(json.result[0].destination).slice(1, -1)
-            document.getElementById("obj13").src = JSON.stringify(json.result[0].thumbnail_url).slice(1, -1)
-            document.getElementById("obj11").href = JSON.stringify(json.result[0].place_id).slice(1, -1)
+            $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + " &categories=" + type + " &provinceName=" + city + " &numberOfResult=100 ", function(json) {
+                console.log(json)
+                document.getElementById("01").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
+                    //document.getElementById("11").href = JSON.stringify(json.result[0].place_id).slice(1, -1)
+                document.getElementById("02").innerHTML = JSON.stringify(json.result[0].destination).slice(1, -1)
+                document.getElementById("03").src = JSON.stringify(json.result[0].thumbnail_url).slice(1, -1)
+
+                document.getElementById("11").innerHTML = JSON.stringify(json.result[1].place_name).slice(1, -1)
+                    //document.getElementById("11").href = JSON.stringify(json.result[1].place_id).slice(1, -1)
+                document.getElementById("12").innerHTML = JSON.stringify(json.result[1].destination).slice(1, -1)
+                document.getElementById("13").src = JSON.stringify(json.result[1].thumbnail_url).slice(1, -1)
+
+                document.getElementById("21").innerHTML = JSON.stringify(json.result[2].place_name).slice(1, -1)
+                    //document.getElementById("11").href = JSON.stringify(json.result[2].place_id).slice(1, -1)
+                document.getElementById("22").innerHTML = JSON.stringify(json.result[2].destination).slice(1, -1)
+                document.getElementById("23").src = JSON.stringify(json.result[2].thumbnail_url).slice(1, -1)
+
+                document.getElementById("31").innerHTML = JSON.stringify(json.result[3].place_name).slice(1, -1)
+                    //document.getElementById("11").href = JSON.stringify(json.result[3].place_id).slice(1, -1)
+                document.getElementById("32").innerHTML = JSON.stringify(json.result[3].destination).slice(1, -1)
+                document.getElementById("33").src = JSON.stringify(json.result[3].thumbnail_url).slice(1, -1)
+
+                document.getElementById("41").innerHTML = JSON.stringify(json.result[4].place_name).slice(1, -1)
+                    //document.getElementById("11").href = JSON.stringify(json.result[4].place_id).slice(1, -1)
+                document.getElementById("42").innerHTML = JSON.stringify(json.result[4].destination).slice(1, -1)
+                document.getElementById("43").src = JSON.stringify(json.result[4].thumbnail_url).slice(1, -1)
+                console.log(JSON.stringify(json.result[4].thumbnail_url).slice(1, -1))
+
+
             });
-            }
+        }
     </script>
 </body>
 
