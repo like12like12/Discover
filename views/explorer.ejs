@@ -131,8 +131,8 @@
                             <!-- <div class="col-12 col-md-10">
                                 <input type="text" name="name" class="form-control" placeholder="Keyword">
                             </div> -->
-                            <input type="text" name="keyword" class="form-control custom-select" placeholder="Keyword">
-                            <select name="city" class="custom-select" id="destinations">
+                            <input type="text" name="keyword" id='keyword' class="form-control custom-select" placeholder="Keyword">
+                            <select name="city" id='city' class="custom-select" id="destinations">
                                 <option selected>Your Destinations</option>
                                 <option value="1">Bangkok</option>
                                 <option value="2">Phra Nakhon Si Ayutthaya</option>
@@ -140,7 +140,7 @@
                                 <option value="4">Nonthaburi</option>
                                 <option value="5">Pathum Thani</option>
                             </select>
-                            <select name="type" class="custom-select" id="catagories">
+                            <select name="type" id='type' class="custom-select" id="catagories">
                                 <option selected>All Catagories</option>
                                 <option value="1">Restaurants</option>
                                 <option value="2">Shopping</option>
@@ -359,9 +359,12 @@
         $(document).ready(function() {
             const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const a = urlParams.get('keyword')
-            console.log(a);
-            alert(a);
+const keyword = urlParams.get('keyword');
+const city = urlParams.get('city');
+const type = urlParams.get('type');
+document.getElementById('keyword').value = keyword;
+document.getElementById('city').value = city;
+document.getElementById('type').value = type;
         })
       </script>
     <!-- <script>
