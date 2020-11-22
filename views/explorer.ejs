@@ -401,7 +401,7 @@
 
     <!-- api JS -->
     <script src="js/api_search.js"></script>
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
@@ -422,7 +422,8 @@
                     'Accept-Language': 'th'
                 }
             });
-            $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + type + "&provinceName=" + city + "&numberOfResult=100", function(json) {
+            $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword="+keyword+"&categories="+type+"&provinceName="+city+"&numberOfResult=100", function(json) {
+                console.log("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword="+keyword+ "&categories=" + type + "&provinceName=" + city + "&numberOfResult=100")
                 console.log(json)
                 document.getElementById("01").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
                     //document.getElementById("11").href = JSON.stringify(json.result[0].place_id).slice(1, -1)
@@ -452,7 +453,7 @@
 
             });
         }
-    </script> -->
+    </script>
 </body>
 
 </html>
