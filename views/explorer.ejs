@@ -133,8 +133,8 @@
                             </div> -->
                             <input type="text" name="keyword" id='keyword' class="form-control custom-select" placeholder="Keyword">
                             <select id="city" class="custom-select" id="destinations">
-                                <option value="0" selected>City Destinations</option>
-                                <option value="Bangkok">Bangkok</option>
+                                <!-- <option value="0" selected>City Destinations</option> -->
+                                <option value="Bangkok"selected>Bangkok</option>
                                 <option value="Ayutthaya">Ayutthaya</option>
                                 <option value="SamutPrakan">SamutPrakan</option>
                                 <option value="Nonthaburi">Nonthaburi</option>
@@ -247,13 +247,16 @@
                     <!-- <div class="price-start">
                         <p>FROM 2800-9000 THB</p>
                     </div> -->
+
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
+
+
                             <h5 id="01" href="#">Lantana Resort</h5>
                             <p id="02">Bangkok</p>
                         </div>
                         <div class="feature-favourite">
-                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a href="single-listing?type=RESTAURANT&id=P08000887"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -325,6 +328,9 @@
                         </div>
                     </div>
                 </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="listing">See more<span class="sr-only">(current)</span></a>
+                </li>
 
 
                 <!-- Single Features Area -->
@@ -391,7 +397,11 @@
     <script src="js/google-map/explore-map-active.js"></script>
     <!-- Active JS -->
     <script src="js/active.js"></script>
-    <script type="text/javascript">
+
+
+    <!-- api JS -->
+    <script src="js/api_search.js"></script>
+    <!-- <script type="text/javascript">
         $(document).ready(function() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
@@ -438,11 +448,11 @@
                     //document.getElementById("11").href = JSON.stringify(json.result[4].place_id).slice(1, -1)
                 document.getElementById("42").innerHTML = JSON.stringify(json.result[4].destination).slice(1, -1)
                 document.getElementById("43").src = JSON.stringify(json.result[4].thumbnail_url).slice(1, -1)
-
+                r
 
             });
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

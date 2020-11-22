@@ -108,7 +108,7 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Breadcumb Area Start ***** -->
-    <div class="breadcumb-area height-700 bg-img bg-overlay" style="background-image: url(https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013835_1.jpg)">
+    <div class="breadcumb-area height-700 bg-img bg-overlay" id="img" style="background-image: url()">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -134,8 +134,8 @@
                     <div class="single-listing-content">
 
                         <div class="listing-title">
-                            <h4>Bicycle Cafe</h4>
-                            <h6>เมืองกาญจนบุรี กาญจนบุรี</h6>
+                            <h4 id="place_name">Bicycle Cafe</h4>
+                            <h6 id="district-province">เมืองกาญจนบุรี กาญจนบุรี</h6>
                         </div>
 
                         <div class="single-listing-nav">
@@ -144,13 +144,14 @@
                                     <li class="active"><a href="#overview">Overview</a></li>
                                     <!-- <li><a href="#menu">Menu</a></li>
                                     <li><a href="#review">Reviews</a></li> -->
-                                    <li><a href="#lomap">Location on map</a></li>
+                                    <li><a id="location" href="#lomap">Location on map</a></li>
                                 </ul>
                             </nav>
                         </div>
 
                         <div class="overview-content mt-50" id="overview">
-                            <p>Bicycle Cafe เป็นร้านอาหารที่จำหน่ายอาหารมากมายหลายชนิด ไม่ว่าจะเป็น อาหารไทย อย่างเช่น แกงพะแนง ข้าวผัด ข้าวผัดกะเพรา หรือจะเป็นอาหารนานาชาติก็อย่างเช่นเบอร์เกอร์ที่มีให้เลือกมากมาย ซี่โครงย่าง แคลิฟอเนียโรล ซึ่งเป็นที่ถูกใจของบรรดานักท่องเที่ยวเป้นอย่างมาก และถ้าหากปั่นจักรยานมาเองทางร้านลดให้ 10% บรรยากาศหน้าร้านนั่งดูต้นไม้ใหญ่สีเขียว เหมาะเเก่การนั่งหย่อนใจเป็นที่สุด</p>
+                            <p>Bicycle Cafe เป็นร้านอาหารที่จำหน่ายอาหารมากมายหลายชนิด ไม่ว่าจะเป็น อาหารไทย อย่างเช่น แกงพะแนง ข้าวผัด ข้าวผัดกะเพรา หรือจะเป็นอาหารนานาชาติก็อย่างเช่นเบอร์เกอร์ที่มีให้เลือกมากมาย ซี่โครงย่าง แคลิฟอเนียโรล ซึ่งเป็นที่ถูกใจของบรรดานักท่องเที่ยวเป้นอย่างมาก
+                                และถ้าหากปั่นจักรยานมาเองทางร้านลดให้ 10% บรรยากาศหน้าร้านนั่งดูต้นไม้ใหญ่สีเขียว เหมาะเเก่การนั่งหย่อนใจเป็นที่สุด</p>
                             <div class="row mt-5">
                                 <div class="col-6">
                                     <label class="custom-control custom-checkbox mb-3">
@@ -184,56 +185,56 @@
                         </div>
 
                         <!-- <div class="listing-menu-area mt-100" id="menu"> -->
-                            <!-- <h4>Menu</h4> -->
-                            <!-- Single Listing Menu -->
-                            <!-- <div class="single-listing-menu d-flex justify-content-between"> -->
-                                <!-- Listing Menu Title -->
-                                <!-- <div class="listing-menu-title"> -->
-                                    <!-- <h6>Classic Burger</h6> -->
-                                    <!-- <p>Beef, salad, mustard, bacon, mayonnaise, spicey relish, cheese</p> -->
-                                <!-- </div> -->
-                                <!-- Listing Menu Price -->
-                                <!-- <div class="listing-menu-price">
+                        <!-- <h4>Menu</h4> -->
+                        <!-- Single Listing Menu -->
+                        <!-- <div class="single-listing-menu d-flex justify-content-between"> -->
+                        <!-- Listing Menu Title -->
+                        <!-- <div class="listing-menu-title"> -->
+                        <!-- <h6>Classic Burger</h6> -->
+                        <!-- <p>Beef, salad, mustard, bacon, mayonnaise, spicey relish, cheese</p> -->
+                        <!-- </div> -->
+                        <!-- Listing Menu Price -->
+                        <!-- <div class="listing-menu-price">
                                     <h6>$9,90</h6>
                                 </div>
                             </div> -->
-                            <!-- Single Listing Menu -->
-                            <!-- <div class="single-listing-menu d-flex justify-content-between"> -->
-                                <!-- Listing Menu Title -->
-                                <!-- <div class="listing-menu-title">
+                        <!-- Single Listing Menu -->
+                        <!-- <div class="single-listing-menu d-flex justify-content-between"> -->
+                        <!-- Listing Menu Title -->
+                        <!-- <div class="listing-menu-title">
                                     <h6>House Special Burger</h6>
                                     <p>Beef, salad, mustard, bacon, mayonnaise, spicey relish, cheese</p>
                                 </div> -->
-                                <!-- Listing Menu Price -->
-                                <!-- <div class="listing-menu-price">
+                        <!-- Listing Menu Price -->
+                        <!-- <div class="listing-menu-price">
                                     <h6>$9,90</h6>
                                 </div>
                             </div> -->
-                            <!-- Single Listing Menu -->
-                            <!-- <div class="single-listing-menu d-flex justify-content-between"> -->
-                                <!-- Listing Menu Title -->
-                                <!-- <div class="listing-menu-title">
+                        <!-- Single Listing Menu -->
+                        <!-- <div class="single-listing-menu d-flex justify-content-between"> -->
+                        <!-- Listing Menu Title -->
+                        <!-- <div class="listing-menu-title">
                                     <h6>Classic Burger</h6>
                                     <p>Beef, salad, mustard, bacon, mayonnaise, spicey relish, cheese</p>
                                 </div> -->
-                                <!-- Listing Menu Price -->
-                                <!-- <div class="listing-menu-price">
+                        <!-- Listing Menu Price -->
+                        <!-- <div class="listing-menu-price">
                                     <h6>$9,90</h6>
                                 </div>
                             </div> -->
-                            <!-- Single Listing Menu -->
-                            <!-- <div class="single-listing-menu d-flex justify-content-between"> -->
-                                <!-- Listing Menu Title -->
-                                <!-- <div class="listing-menu-title">
+                        <!-- Single Listing Menu -->
+                        <!-- <div class="single-listing-menu d-flex justify-content-between"> -->
+                        <!-- Listing Menu Title -->
+                        <!-- <div class="listing-menu-title">
                                     <h6>House Special Burger</h6>
                                     <p>Beef, salad, mustard, bacon, mayonnaise, spicey relish, cheese</p>
                                 </div> -->
-                                <!-- Listing Menu Price -->
-                                <!-- <div class="listing-menu-price">
+                        <!-- Listing Menu Price -->
+                        <!-- <div class="listing-menu-price">
                                     <h6>$9,90</h6>
                                 </div>
                             </div> -->
-                            <!-- <a href="#" class="btn dorne-btn mt-50">+ See The Menu</a> -->
+                        <!-- <a href="#" class="btn dorne-btn mt-50">+ See The Menu</a> -->
                         <!-- </div> -->
 
                         <!-- <div class="listing-reviews-area mt-100" id="review">
@@ -331,31 +332,31 @@
                             <ul class="opening-hours">
                                 <li>
                                     <p>Monday</p>
-                                    <p>Closed</p>
+                                    <p id="day1">Closed</p>
                                 </li>
                                 <li>
                                     <p>Tuesday</p>
-                                    <p>9 AM - 1 PM</p>
+                                    <p id="day2">9 AM - 1 PM</p>
                                 </li>
                                 <li>
                                     <p>Wednesday</p>
-                                    <p>9 AM - 1 PM</p>
+                                    <p id="day3">9 AM - 1 PM</p>
                                 </li>
                                 <li>
                                     <p>Thursday</p>
-                                    <p>9 AM - 1 PM</p>
+                                    <p id="day4"> 9 AM - 1 PM</p>
                                 </li>
                                 <li>
                                     <p>Friday</p>
-                                    <p>9 AM - 1 PM</p>
+                                    <p id="day5">9 AM - 1 PM</p>
                                 </li>
                                 <li>
                                     <p>Saturday</p>
-                                    <p>9 AM - 1 PM</p>
+                                    <p id="day6">9 AM - 1 PM</p>
                                 </li>
                                 <li>
                                     <p>Sunday</p>
-                                    <p>9 AM - 1 PM</p>
+                                    <p id="day7">9 AM - 1 PM</p>
                                 </li>
                             </ul>
                         </div>
@@ -405,8 +406,8 @@
                     <div class="footer-text">
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                     <div class="footer-social-btns">
@@ -435,6 +436,8 @@
     <script src="js/google-map/location-map-active.js"></script>
     <!-- Active JS -->
     <script src="js/active.js"></script>
+    <!-- api_place JS -->
+    <script src="js/api_place.js"></script>
 </body>
 
 </html>
