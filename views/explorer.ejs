@@ -127,12 +127,12 @@
                 <!-- Tabs Content -->
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
-                        <form action="explorer" method="get">
+                        <form action="" method="get">
                             <!-- <div class="col-12 col-md-10">
                                 <input type="text" name="name" class="form-control" placeholder="Keyword">
                             </div> -->
                             <input type="text" name="keyword" id='keyword' class="form-control custom-select" placeholder="Keyword">
-                            <select id="city" class="custom-select" id="destinations">
+                            <select class="custom-select" id="destinations">
                                 <!-- <option value="0" selected>City Destinations</option> -->
                                 <option value="Bangkok"selected>Bangkok</option>
                                 <option value="Ayutthaya">Ayutthaya</option>
@@ -140,7 +140,7 @@
                                 <option value="Nonthaburi">Nonthaburi</option>
                                 <option value="PathumThani">PathumThani</option>
                             </select>
-                            <select id="type" class="custom-select" id="catagories">
+                            <select class="custom-select" id="catagories">
                                 <option value="ALL" selected>All Catagories</option>
                                 <option value="RESTAURANT">Restaurants</option>
                                 <option value="SHOP">Shopping</option>
@@ -198,9 +198,12 @@
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn dorne-btn mt-50 bg-white text-dark"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
+                            <button id="btn" type="submit" class="btn dorne-btn mt-50 bg-white text-dark"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
                         </form>
                     </div>
+
+
+
                     <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
                         <form action="#" method="get">
                             <select class="custom-select" id="events-destinations">
@@ -256,7 +259,7 @@
                             <p id="02">Bangkok</p>
                         </div>
                         <div class="feature-favourite">
-                            <!--  <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i></a> --> 
+                            <!--  <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
                         </div>
                     </div>
                 </div>
@@ -329,7 +332,7 @@
                     </div>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link" href="listing">See more<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="single-listing?type=RESTAURANT&id=P08000887">See more<span class="sr-only">(current)</span></a>
                 </li>
 
 

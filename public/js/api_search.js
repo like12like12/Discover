@@ -1,32 +1,23 @@
 $(document).ready(function() {
-    const queryString = window.location.search;
-    const decode = decodeURIComponent(queryString);
-    const urlParams = new URLSearchParams(decode);
-    const keyword = urlParams.get('keyword');
-    const city = urlParams.get('city');
-    const type = urlParams.get('type');
-    document.getElementById('keyword').value = keyword;
-    document.getElementById('city').value = city;
-    document.getElementById('type').value = type;
-    getapi();
-    console.log(queryString);
-    console.log(decode);
-    console.log(keyword);
-    console.log(city);
-    console.log(type);
-    console.log("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&location=13.6904831,100.5226014" + "&categories=" + type + "&provinceName=" + city + "&numberOfResult=100");
-
-
-})
-
-function getapi() {
     $.ajaxSetup({
         headers: {
             'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
             'Accept-Language': 'th'
         }
     });
-    $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + type + "&provinceName=" + city + "&numberOfResult=100", function(json) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const keyword = urlParams.get('keyword');
+    const destinations = urlParams.get('destinations');
+    const catagories = urlParams.get('catagories');
+    document.getElementById('keyword').value = keyword;
+    document.getElementById('destinations').value = destinations;
+    document.getElementById('catagories').value = catagories;
+    const api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + catagories + "&provinceName=";
+    const decodeurl = decodeURIComponent(api);
+
+
+    $.getJSON(decodeurl, function(json) {
         console.log(json)
         document.getElementById("01").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
             //document.getElementById("11").href = JSON.stringify(json.result[0].place_id).slice(1, -1)
@@ -55,4 +46,19 @@ function getapi() {
 
 
     });
-}
+
+
+
+
+    console.log(queryString);
+    console.log(api);
+    console.log(keyword);
+    console.log(destinations);
+    console.log(catagories);
+    console.log(decodeurl);
+
+
+    //https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=อาหาร&location=13.6904831,100.5226014&categories=RESTAURANT&provinceName=Bangkok&radius=20&numberOfResult=10&pagenumber=1&destination=Bangkok&filterByUpdateDate=2019/09/01-2021/12/31
+
+
+})

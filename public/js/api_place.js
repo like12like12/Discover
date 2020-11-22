@@ -23,7 +23,7 @@ function getapi() {
     $.ajaxSetup({
         headers: {
             'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
-            'Accept-Language': 'th'
+            'Accept-Language': 'en'
         }
     });
 
@@ -48,3 +48,4 @@ function getapi() {
         document.getElementById("day7").innerHTML = JSON.stringify(json.result.opening_hours.weekday_text.day7)
     });
 }
+ผ
