@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
+            'Accept-Language': 'en'
+        }
+    });
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -11,26 +17,7 @@ $(document).ready(function() {
     const other = "OTHER";
 
 
-    getapi();
-    console.log(type);
-    console.log(id);
-    console.log("https://tatapi.tourismthailand.org/tatapi/v5/" + type + "/" + id);
 
-
-})
-
-function getapi() {
-    $.ajaxSetup({
-        headers: {
-            'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
-            'Accept-Language': 'en'
-        }
-    });
-
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const type = urlParams.get('type');
-    const id = urlParams.get('id');
 
     $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/" + type + "/" + id, function(json) {
         console.log(json)
@@ -47,5 +34,11 @@ function getapi() {
         document.getElementById("day6").innerHTML = JSON.stringify(json.result.opening_hours.weekday_text.day6)
         document.getElementById("day7").innerHTML = JSON.stringify(json.result.opening_hours.weekday_text.day7)
     });
-}
-ผ
+
+
+    console.log(type);
+    console.log(id);
+    console.log("https://tatapi.tourismthailand.org/tatapi/v5/" + type + "/" + id);
+
+
+})

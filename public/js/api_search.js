@@ -47,9 +47,6 @@ $(document).ready(function() {
 
     });
 
-
-
-
     console.log(queryString);
     console.log(api);
     console.log(keyword);
