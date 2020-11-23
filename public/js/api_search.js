@@ -46,16 +46,4 @@ $(document).ready(function() {
 
 
     });
-
-    console.log(queryString);
-    console.log(api);
-    console.log(keyword);
-    console.log(destinations);
-    console.log(catagories);
-    console.log(decodeurl);
-
-
-    //https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=อาหาร&location=13.6904831,100.5226014&categories=RESTAURANT&provinceName=Bangkok&radius=20&numberOfResult=10&pagenumber=1&destination=Bangkok&filterByUpdateDate=2019/09/01-2021/12/31
-
-
-})
+});
