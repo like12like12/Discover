@@ -13,13 +13,19 @@ $(document).ready(function() {
     document.getElementById('keyword').value = keyword;
     document.getElementById('destination').value = destination;
     document.getElementById('catagory').value = catagory;
-    const api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + catagory + "&provinceName=" + destination;
-    // const decodeurl = decodeURIComponent(api);
+    api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + catagory + "&provinceName=" + destination;
+    if(keyword&&destination&&catagory){
+    }else{
+        document.getElementById('keyword').value = keyword;
+        document.getElementById('destination').value = "";
+        document.getElementById('catagory').value = "ALL";
+        api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + "วัด" + "&categories=" + "ALL" + "&provinceName=" + "";
+    }
+    const decodeurl = decodeURIComponent(api);
 
 
-    $.getJSON(api, function(json) {
+    $.getJSON(decodeurl, function(json) {
         console.log(json)
-        console.log("single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1))
         document.getElementById("01").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
         document.getElementById("02").innerHTML = JSON.stringify(json.result[0].destination).slice(1, -1)
         document.getElementById("03").src = JSON.stringify(json.result[0].thumbnail_url).slice(1, -1)
