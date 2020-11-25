@@ -13,7 +13,7 @@ $(document).ready(function() {
     document.getElementById('keyword').value = keyword;
     document.getElementById('destination').value = destination;
     document.getElementById('catagory').value = catagory;
-    const api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + catagory + "&provinceName=";
+    const api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + catagory + "&provinceName=" + destination;
     // const decodeurl = decodeURIComponent(api);
 
 
