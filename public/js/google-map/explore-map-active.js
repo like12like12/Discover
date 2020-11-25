@@ -19,7 +19,7 @@ var mapOptions = {
 };
 map = new google.maps.Map(document.getElementById("exploreGoogleMap"), mapOptions);
 var geocoder_map = new google.maps.Geocoder();
-var address = "bangkok";
+var address = document.getElementById("01").innerHTML;
 geocoder_map.geocode({
     'address': address
 }, function (results, status) {

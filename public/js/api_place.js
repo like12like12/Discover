@@ -8,14 +8,19 @@ $(document).ready(function() {
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const type = urlParams.get('type');
-    const id = urlParams.get('id');
+    type = urlParams.get('type');
+    id = urlParams.get('id');
     // const Hotel = "ACCOMMODATION";
     // const attraction = "ATTRACTION";
     // const restaurant = "RESTAURANT";
     // const shop = "SHOP";
     // const other = "OTHER";
 
+    if(type&&id){
+    }else{
+        type = "ATTRACTION"
+        id = "P03012187"
+    }
 
 
 
