@@ -19,7 +19,7 @@ var mapOptions = {
 };
 map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
 var geocoder_map = new google.maps.Geocoder();
-var address = 'London';
+address = 'มหาวิทยาลัยหอการค้าไทย';
 geocoder_map.geocode({
     'address': address
 }, function (results, status) {

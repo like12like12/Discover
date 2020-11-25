@@ -26,6 +26,8 @@ $(document).ready(function() {
 
     $.getJSON(decodeurl, function(json) {
         console.log(json)
+        address = JSON.stringify(json.result[0].latitude).slice(1, -1)+","+JSON.stringify(json.result[0].longitude).slice(1, -1)
+        console.log(address)
         document.getElementById("01").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
         document.getElementById("02").innerHTML = JSON.stringify(json.result[0].destination).slice(1, -1)
         document.getElementById("03").src = JSON.stringify(json.result[0].thumbnail_url).slice(1, -1)

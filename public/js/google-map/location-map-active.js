@@ -19,7 +19,7 @@ var mapOptions = {
 };
 map = new google.maps.Map(document.getElementById("locationMap"), mapOptions);
 var geocoder_map = new google.maps.Geocoder();
-var address = 'rome';
+var address = JSON.stringify(json.result[0].latitude)+","+JSON.stringify(json.result[0].longitude);
 geocoder_map.geocode({
     'address': address
 }, function (results, status) {
