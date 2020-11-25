@@ -126,42 +126,23 @@
                 </div>
                 <!-- Tabs Content -->
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
-                        <form action="" method="get">
-                            <!-- <div class="col-12 col-md-10">
-                                <input type="text" name="name" class="form-control" placeholder="Keyword">
-                            </div> -->
-                            <input type="text" name="keyword" id='keyword' class="form-control custom-select" placeholder="Keyword">
-                            <select class="custom-select" id="destinations">
-                                <!-- <option value="0" selected>City Destinations</option> -->
-                                <option value="Bangkok"selected>Bangkok</option>
+                    <div class="tab-pane fade show active" id="nav-places" aria-labelledby="nav-places-tab">
+                        <form action="explorer" method="get">
+                            <input type="text" id="keyword" name='keyword' class="form-control custom-select" placeholder="Keyword">
+                            <select name="destination" class="custom-select" id="destination">
+                                <option value="Bangkok">Bangkok</option>
                                 <option value="Ayutthaya">Ayutthaya</option>
                                 <option value="SamutPrakan">SamutPrakan</option>
                                 <option value="Nonthaburi">Nonthaburi</option>
                                 <option value="PathumThani">PathumThani</option>
                             </select>
-                            <select class="custom-select" id="catagories">
-                                <option value="ALL" selected>All Catagories</option>
+                            <select name="catagory" class="custom-select" id="catagory">
+                                <option value="ALL">All Catagories</option>
                                 <option value="RESTAURANT">Restaurants</option>
                                 <option value="SHOP">Shopping</option>
                                 <option value="ACCOMMODATION">Hotels</option>
                             </select>
-                            <!-- <select class="custom-select" id="price-range">
-                                <option selected>Price Range</option>
-                                <option value="1">$100 - $499</option>
-                                <option value="2">$500 - $999</option>
-                                <option value="3">$1000 - $4999</option>
-                                <option value="3">$5000+</option>
-                            </select> -->
-                            <!-- <select class="custom-select" id="proximity">
-                                <option selected>Proximity</option>
-                                <option value="1">Proximity 1</option>
-                                <option value="2">Proximity 2</option>
-                                <option value="3">Proximity 3</option>
-                                <option value="3">Proximity 4</option>
-                                <option value="3">Proximity 5</option>
-                            </select> -->
-                            <div class="row mt-md-5 mt-0">
+                            <!-- <div class="row mt-md-5 mt-0">
                                 <div class="col-12 col-xl-6">
                                     <label class="custom-control custom-checkbox mb-3">
                                         <input type="checkbox" class="custom-control-input">
@@ -197,17 +178,17 @@
                                         <span class="custom-control-description">Michelin Guide</span>
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
                             <button id="btn" type="submit" class="btn dorne-btn mt-50 bg-white text-dark"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
                         </form>
                     </div>
 
 
 
-                    <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
+                    <!-- <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
                         <form action="#" method="get">
                             <select class="custom-select" id="events-destinations">
-                                <!-- <option value="0" selected>City Destinations</option> -->
+                                <option value="0" selected>City Destinations</option>
                                 <option value="Bangkok">Bangkok</option>
                                 <option value="Ayutthaya">Ayutthaya</option>
                                 <option value="SamutPrakan">SamutPrakan</option>
@@ -219,7 +200,7 @@
                                 <option value="RESTAURANT">Restaurants</option>
                                 <option value="SHOP">Shopping</option>
                                 <option value="ACCOMMODATION">Hotels</option>
-                            </select>
+                            </select> -->
                             <!-- <select class="custom-select" id="events-price-range">
                                 <option selected>Price Range</option>
                                 <option value="1">$100 - $499</option>
@@ -234,103 +215,112 @@
                                 <option value="3">Proximity 3</option>
                                 <option value="3">Proximity 4</option>
                                 <option value="3">Proximity 5</option> -->
-                            </select>
+                            <!-- </select>
                             <button type="submit" class="btn dorne-btn mt-50 bg-white text-dark"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <!-- Explore Search Result -->
             <div class="explore-search-result">
                 <!-- Single Features Area -->
-                <div class="single-features-area">
-                    <img id="03" src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P02000185_3.jpeg" alt="">
-                    <!-- Price -->
-                    <!-- <div class="price-start">
-                        <p>FROM 2800-9000 THB</p>
-                    </div> -->
-
-                    <div class="feature-content d-flex align-items-center justify-content-between">
-                        <div class="feature-title">
-
-
-                            <h5 id="01" href="#">Lantana Resort</h5>
-                            <p id="02">Bangkok</p>
-                        </div>
-                        <div class="feature-favourite">
-                            <!--  <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                <a id="04" href="/">
+                    <div class="single-features-area">
+                        <img id="03" src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P02000185_3.jpeg" alt="">
+                        <!-- Price -->
+                        <!-- <div class="price-start">
+                            <p>FROM 2800-9000 THB</p>
+                        </div> -->
+                        <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-title">
+                            
+                            
+                                <h5 id="01">Lantana Resort</h5>
+                                <p id="02">Bangkok</p>
+                            </div>
+                            <div class="feature-favourite">
+                                <!--  <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
-                    <img id="13" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P02012360_1.jpg" alt="">
-                    <!-- Price -->
-                    <!-- <div class="price-start">
-                        <p>FROM 500-3000 THB</p>
-                    </div> -->
-                    <div class="feature-content d-flex align-items-center justify-content-between">
-                        <div class="feature-title">
-                            <h5 id="11">The Countryside Resort</h5>
-                            <p id="12">Maehongson</p>
-                        </div>
-                        <div class="feature-favourite">
-                            <!-- <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                <a id="14" href="/">
+                    <div class="single-features-area">
+                        <img id="13" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P02012360_1.jpg" alt="">
+                        <!-- Price -->
+                        <!-- <div class="price-start">
+                            <p>FROM 500-3000 THB</p>
+                        </div> -->
+                        <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-title">
+                                <h5 id="11">The Countryside Resort</h5>
+                                <p id="12">Maehongson</p>
+                            </div>
+                            <div class="feature-favourite">
+                                <!-- <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
-                    <img id="23" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg" alt="">
-                    <!-- Price -->
-                    <!-- <div class="price-start">
-                        <p>FROM 1000-3000 THB</p>
-                    </div> -->
-                    <div class="feature-content d-flex align-items-center justify-content-between">
-                        <div class="feature-title">
-                            <h5 id="21">Krabifrontbay Resort</h5>
-                            <p id="22">Krabi</p>
-                        </div>
-                        <div class="feature-favourite">
-                            <!-- <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                <a id="24" href="/">
+                    <div class="single-features-area">
+                        <img id="23" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg" alt="">
+                        <!-- Price -->
+                        <!-- <div class="price-start">
+                            <p>FROM 1000-3000 THB</p>
+                        </div> -->
+                        <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-title">
+                                <h5 id="21">Krabifrontbay Resort</h5>
+                                <p id="22">Krabi</p>
+                            </div>
+                            <div class="feature-favourite">
+                                <!-- <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
-                    <img id="33" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg" alt="">
-                    <!-- Price -->
-                    <!-- <div class="price-start">
-                        <p>FROM 1000-3000 THB</p>
-                    </div> -->
-                    <div class="feature-content d-flex align-items-center justify-content-between">
-                        <div class="feature-title">
-                            <h5 id="31">Krabifrontbay Resort</h5>
-                            <p id="32">Krabi</p>
-                        </div>
-                        <div class="feature-favourite">
-                            <!-- <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                <a id="34" href="/">
+                    <div class="single-features-area">
+                        <img id="33" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg" alt="">
+                        <!-- Price -->
+                        <!-- <div class="price-start">
+                            <p>FROM 1000-3000 THB</p>
+                        </div> -->
+                        <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-title">
+                                <h5 id="31">Krabifrontbay Resort</h5>
+                                <p id="32">Krabi</p>
+                            </div>
+                            <div class="feature-favourite">
+                                <!-- <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
-                    <img id="43" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg" alt="">
-                    <!-- Price -->
-                    <!-- <div class="price-start">
-                        <p>FROM 1000-3000 THB</p>
-                    </div> -->
-                    <div class="feature-content d-flex align-items-center justify-content-between">
-                        <div class="feature-title">
-                            <h5 id="41">Krabifrontbay Resort</h5>
-                            <p id="42">Krabi</p>
-                        </div>
-                        <div class="feature-favourite">
-                            <!-- <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                <a id="44" href="/">
+                    <div class="single-features-area">
+                        <img id="43" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg" alt="">
+                        <!-- Price -->
+                        <!-- <div class="price-start">
+                            <p>FROM 1000-3000 THB</p>
+                        </div> -->
+                        <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-title">
+                                <h5 id="41">Krabifrontbay Resort</h5>
+                                <p id="42">Krabi</p>
+                            </div>
+                            <div class="feature-favourite">
+                                <!-- <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a> -->
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <li class="nav-item">
                     <a class="nav-link" href="single-listing?type=RESTAURANT&id=P08000887">See more<span class="sr-only">(current)</span></a>
                 </li>
