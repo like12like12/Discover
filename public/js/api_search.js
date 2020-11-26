@@ -17,7 +17,7 @@ $(document).ready(function() {
     if(keyword&&destination&&catagory){
     }else{
         document.getElementById('keyword').value = keyword;
-        document.getElementById('destination').value = "";
+        document.getElementById('destination').value = "Bangkok";
         document.getElementById('catagory').value = "ALL";
         api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + "วัด" + "&categories=" + "ALL" + "&provinceName=" + "";
     }
