@@ -134,25 +134,25 @@
                 <div class="contact-form-title">
                     <h6></h6>
                 </div>
-                <form id="data">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name">
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <input type="email" name="email" class="form-control" placeholder="Email Address">
-                        </div>
-                        <div class="col-12">
-                            <input type="text" name="subject" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="col-12">
-                            <textarea name="message" class="form-control" id="Message" cols="30" rows="10" placeholder="Your Message"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn dorne-btn" onclick='send()'>Send</button>
-                        </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
                     </div>
-                </form>
+                    <div class="col-12 col-md-6">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email Address">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="col-12">
+                        <textarea name="message" id="message" class="form-control" id="Message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn dorne-btn" id="submit">Send</button>
+                    </div>
+                </div>
+
             </div>
         </div>
         <!-- Map Area -->
@@ -170,8 +170,8 @@
                     <div class="footer-text">
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                     <div class="footer-social-btns">
@@ -200,24 +200,71 @@
     <script src="js/google-map/map-active.js"></script>
     <!-- Active JS -->
     <script src="js/active.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
 </body>
 <script>
-    $( document ).ready(function() {
+    $(document).ready(function() {
         console.log(address)
         address = 'มหาวิทยาลัยหอการค้าไทย';
     });
-    function send(){
+
+    function send() {
         $.ajax({
-            url:"https://api.apispreadsheets.com/data/4052/",
-            type:"post",
-            data:$("#data").serializeArray(),
-            success: function(){
+            url: "https://api.apispreadsheets.com/data/4052/",
+            type: "post",
+            data: $("#data").serializeArray(),
+            success: function() {
                 alert("Submitted")
             },
-            error: function(){
+            error: function() {
                 alert("กรุณากรอกข้อมูลให้ถูกต้องและครบทุกช่อง")
             }
         });
     }
 </script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBjG9lEIkNT-TioHPnie58KAkjuz2vGrGM",
+        authDomain: "discover-8bf53.firebaseapp.com",
+        databaseURL: "https://discover-8bf53.firebaseio.com",
+        projectId: "discover-8bf53",
+        storageBucket: "discover-8bf53.appspot.com",
+        messagingSenderId: "303011823352",
+        appId: "1:303011823352:web:381965ce2331bb5ab7850d"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var firestore = firebase.firestore();
+
+    const docRef = firestore.doc("contacts/contactData");
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#email");
+    const subject = document.querySelector("#subject");
+    const message = document.querySelector("#message");
+    const submit = document.querySelector("#submit");
+
+    submit.addEventListener("click", function() {
+        const data1 = name.value;
+        const data2 = email.value;
+        const data3 = subject.value;
+        const data4 = message.value;
+
+        console.log("save" + name.value + email.value + subject.value + message.value);
+        docRef.set({
+            name: data1,
+            email: data2,
+            subject: data3,
+            message: data4
+        }).then(function() {
+            console.log('save');
+        }).catch(function(error) {
+            console.log('err', error);
+
+        });
+    });
+</script>
+
 </html>
