@@ -28,12 +28,15 @@ function setup() {
         document.getElementById("01").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
         document.getElementById("02").innerHTML = JSON.stringify(json.result[0].destination).slice(1, -1)
         document.getElementById("03").src = JSON.stringify(json.result[0].thumbnail_url).slice(1, -1)
+        latlong = JSON.stringify(json.result[0].latitude) + ',' + JSON.stringify(json.result[0].longitude)
         document.getElementById("04").onclick = "single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1)
         place_id[0] = JSON.stringify(json.result[0].place_id).slice(1, -1)
-        onclick="window.location='#';"
+        
+        
         document.getElementById("11").innerHTML = JSON.stringify(json.result[1].place_name).slice(1, -1)
         document.getElementById("12").innerHTML = JSON.stringify(json.result[1].destination).slice(1, -1)
         document.getElementById("13").src = JSON.stringify(json.result[1].thumbnail_url).slice(1, -1)
+        document.getElementById("13").onclick = "map("+ json.result[1].latitude + ',' + json.result[1].longitude + ")"
         document.getElementById("14").href = "single-listing?type=" + JSON.stringify(json.result[1].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[1].place_id).slice(1, -1)
         place_id[1] = JSON.stringify(json.result[1].place_id).slice(1, -1)
 
