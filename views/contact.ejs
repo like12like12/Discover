@@ -252,14 +252,14 @@
         const data3 = subject.value;
         const data4 = message.value;
 
-        console.log("save" + name.value + email.value + subject.value + message.value);
+        console.log("saveing " + name.value + email.value + subject.value + message.value);
         docRef.set({
             name: data1,
             email: data2,
             subject: data3,
             message: data4
         }).then(function() {
-            console.log('save');
+            console.log('saved');
         }).catch(function(error) {
             console.log('err', error);
 
