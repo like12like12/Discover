@@ -1,7 +1,5 @@
 var place_id = [""]
 function setup() {
-
-
     $.ajaxSetup({
         headers: {
             'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
@@ -30,9 +28,9 @@ function setup() {
         document.getElementById("01").innerHTML = JSON.stringify(json.result[0].place_name).slice(1, -1)
         document.getElementById("02").innerHTML = JSON.stringify(json.result[0].destination).slice(1, -1)
         document.getElementById("03").src = JSON.stringify(json.result[0].thumbnail_url).slice(1, -1)
-        document.getElementById("04").href = "single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1)
+        document.getElementById("04").onclick = "single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1)
         place_id[0] = JSON.stringify(json.result[0].place_id).slice(1, -1)
-
+        onclick="window.location='#';"
         document.getElementById("11").innerHTML = JSON.stringify(json.result[1].place_name).slice(1, -1)
         document.getElementById("12").innerHTML = JSON.stringify(json.result[1].destination).slice(1, -1)
         document.getElementById("13").src = JSON.stringify(json.result[1].thumbnail_url).slice(1, -1)
