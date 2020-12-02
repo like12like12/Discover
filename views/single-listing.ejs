@@ -438,6 +438,17 @@
     <script src="js/active.js"></script>
     <!-- api_place JS -->
     <script src="js/api_place.js"></script>
+    <script>
+        $(function() {
+            $(document).ready(function() {
+                location_map(lat[0] + lng[0])
+            });
+
+            $(window).on("load", function() {
+                location_map(lat[0] + lng[0])
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,7 @@
 var place_id = [""]
 var latlong = [""]
+var lat = [""]
+var lng = [""]
 
 function setup() {
     $.ajaxSetup({
@@ -29,16 +31,26 @@ function setup() {
         console.log(json)
 
 
-        //LatLng
-        latlong[0] = JSON.stringify(json.result[0].latitude) + ',' + JSON.stringify(json.result[0].longitude)
-        latlong[1] = JSON.stringify(json.result[1].latitude) + ',' + JSON.stringify(json.result[1].longitude)
-        latlong[2] = JSON.stringify(json.result[2].latitude) + ',' + JSON.stringify(json.result[2].longitude)
-        latlong[3] = JSON.stringify(json.result[3].latitude) + ',' + JSON.stringify(json.result[3].longitude)
-        latlong[4] = JSON.stringify(json.result[4].latitude) + ',' + JSON.stringify(json.result[4].longitude)
-            //document.getElementById("13").onclick = "map(" + json.result[1].latitude + ',' + json.result[1].longitude + ")"
+        //Lat
+        lat[0] = JSON.stringify(json.result[0].latitude) + ','
+        lat[1] = JSON.stringify(json.result[1].latitude) + ','
+        lat[2] = JSON.stringify(json.result[2].latitude) + ','
+        lat[3] = JSON.stringify(json.result[3].latitude) + ','
+        lat[4] = JSON.stringify(json.result[4].latitude) + ','
+
+        //Lng
+        lng[0] = JSON.stringify(json.result[0].longitude)
+        lng[1] = JSON.stringify(json.result[1].longitude)
+        lng[2] = JSON.stringify(json.result[2].longitude)
+        lng[3] = JSON.stringify(json.result[3].longitude)
+        lng[4] = JSON.stringify(json.result[4].longitude)
 
 
 
+        //document.getElementById("13").onclick = "map(" + json.result[1].latitude + ',' + json.result[1].longitude + ")"
+
+
+        console.log("single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1))
 
         //place_id
         place_id[0] = JSON.stringify(json.result[0].place_id).slice(1, -1)
@@ -79,11 +91,11 @@ function setup() {
 
 
         //href
-        // document.getElementById("04").onclick = "single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1)
-        //document.getElementById("14").href = "single-listing?type=" + JSON.stringify(json.result[1].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[1].place_id).slice(1, -1)
-        //document.getElementById("24").href = "single-listing?type=" + JSON.stringify(json.result[2].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[2].place_id).slice(1, -1)
-        //document.getElementById("34").href = "single-listing?type=" + JSON.stringify(json.result[3].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[3].place_id).slice(1, -1)
-        // document.getElementById("44").href = "single-listing?type=" + JSON.stringify(json.result[4].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[4].place_id).slice(1, -1)
+        document.getElementById("04").onclick = "single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1)
+            //document.getElementById("14").href = "single-listing?type=" + JSON.stringify(json.result[1].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[1].place_id).slice(1, -1)
+            //document.getElementById("24").href = "single-listing?type=" + JSON.stringify(json.result[2].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[2].place_id).slice(1, -1)
+            //document.getElementById("34").href = "single-listing?type=" + JSON.stringify(json.result[3].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[3].place_id).slice(1, -1)
+            // document.getElementById("44").href = "single-listing?type=" + JSON.stringify(json.result[4].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[4].place_id).slice(1, -1)
 
     });
 }
