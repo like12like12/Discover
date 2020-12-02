@@ -9,4 +9,4 @@
 - [ ] List Restaurants and Hotels.
 - [x] Contact to Dev. /Report Bug.
 - [x] Google Map API Integration.
-- [ ] Favorite Place in Cookie.
+- [ ] Save Favorite to Cookie.
