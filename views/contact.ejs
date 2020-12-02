@@ -52,7 +52,6 @@
                 <div class="col-12 h-100">
                     <nav class="h-100 navbar navbar-expand-lg">
                         <h1 class="nav-link" style="color:rgb(255, 255, 255)" href="/">Discover </h1>
-                        <!-- <a class="navbar-brand" href="/"><img src="img/core-img/logo.png" alt=""></a> -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
                         <!-- Nav -->
                         <div class="collapse navbar-collapse" id="dorneNav">
@@ -63,42 +62,17 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="explorer">Explore <span class="sr-only">(current)</span></a>
                                 </li>
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explore <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="/">Home</a>
-                                        <a class="dropdown-item" href="explorer">Explore</a>
-                                        <a class="dropdown-item" href="listing">Listing</a>
-                                        <a class="dropdown-item" href="single-listing">Single Listing</a>
-                                        <a class="dropdown-item" href="contact">Contact</a>
-                                    </div>
-                                </li> -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                        <!-- <a class="dropdown-item" href="/">Home</a> -->
-                                        <!-- <a class="dropdown-item" href="explore">Explore</a> -->
                                         <a class="dropdown-item" href="listing">Listing</a>
                                         <a class="dropdown-item" href="single-listing">Single Listing</a>
-                                        <!-- <a class="dropdown-item" href="contact">Contact</a> -->
                                     </div>
                                 </li>
                                 <li class="nav-item active">
                                     <a class="nav-link" href="contact">Contact</a>
                                 </li>
                             </ul>
-                            <!-- Search btn -->
-                            <div class="dorne-search-btn">
-                                <!-- <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i> Search</a> -->
-                            </div>
-                            <!-- Signin btn -->
-                            <!-- <div class="dorne-signin-btn">
-                                <a href="#">Sign in  or Register</a>
-                            </div> -->
-                            <!-- Add listings btn -->
-                            <!-- <div class="dorne-add-listings-btn">
-                                <a href="#" class="btn dorne-btn">+ Add Listings</a>
-                            </div> -->
                         </div>
                     </nav>
                 </div>
@@ -120,10 +94,6 @@
                 <h4>Contact with us</h4>
                 <p></p>
                 <div class="contact-info d-lg-flex">
-                    <!-- <div class="single-contact-info">
-                        <h6><i class="fa fa-map-signs" aria-hidden="true"></i> Main Avenue Soho, NY</h6>
-                        <h6><i class="fa fa-map-signs" aria-hidden="true"></i> No. 25-33</h6>
-                    </div> -->
                     <div class="single-contact-info">
                         <h6><i class="fa fa-envelope-o" aria-hidden="true"></i> contact@discover.com</h6>
                         <h6><i class="fa fa-phone" aria-hidden="true"></i> +6699-999-9999</h6>
@@ -167,13 +137,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 d-md-flex align-items-center justify-content-between">
-                    <div class="footer-text">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
                     <div class="footer-social-btns">
                         <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
                         <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
@@ -259,6 +222,7 @@
             message: data4
         }).then(function() {
             console.log('saved');
+            alert("Submit Message Complete")
         }).catch(function(error) {
             console.log('err', error);
 

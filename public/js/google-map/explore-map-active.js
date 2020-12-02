@@ -1,6 +1,6 @@
 function map(address) {
     var map;
-    var latlng = new google.maps.LatLng(13.8244035, 100.5413393);
+    var latlng = new google.maps.LatLng(13.7248936,100.4930264);
     var stylez = [{
         featureType: "all",
         elementType: "all",

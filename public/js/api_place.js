@@ -26,25 +26,26 @@ $(document).ready(function() {
 
 
     $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/" + type + "/" + id, function(json) {
-
         console.log(json)
-
-
         //Lat
         lat[0] = JSON.stringify(json.result.latitude) + ','
-
         //Lng
         lng[0] = JSON.stringify(json.result.longitude)
-
-
-
+        
         document.getElementById("place_name").innerHTML = JSON.stringify(json.result.place_name).slice(1, -1)
-        document.getElementById("img").style = "background-image: url(" + JSON.stringify(json.result.web_picture_urls[0]).slice(1, -1) + ")"
+        try{
+            document.getElementById("img").style = "background-image: url(" + JSON.stringify(json.result.web_picture_urls[0]).slice(1, -1) + ")"
+        }catch{}
+        
         document.getElementById("district-province").innerHTML = "เมือง " + JSON.stringify(json.result.location.district).slice(1, -1) + " จังหวัด " + JSON.stringify(json.result.location.province).slice(1, -1)
-        document.getElementById("overview").innerHTML = JSON.stringify(json.result.place_information.introduction).slice(1, -1) + JSON.stringify(json.result.place_information.detail).slice(1, -1)
+        if(json.result.place_information.introduction){
+            document.getElementById("overview").innerHTML = JSON.stringify(json.result.place_information.introduction).slice(1, -1) + JSON.stringify(json.result.place_information.detail).slice(1, -1)
+        }else{
+            document.getElementById("overviewheader").style.display = "none";
+        }
         latlong = JSON.stringify(json.result.latitude) + ',' + JSON.stringify(json.result.longitude)
 
-        if (json.result.opening_hours) {
+        if (json.result.opening_hours.weekday_text.day1) {
             document.getElementById("day1").innerHTML = JSON.stringify(json.result.opening_hours.weekday_text.day1);
             document.getElementById("day2").innerHTML = JSON.stringify(json.result.opening_hours.weekday_text.day2);
             document.getElementById("day3").innerHTML = JSON.stringify(json.result.opening_hours.weekday_text.day3);
