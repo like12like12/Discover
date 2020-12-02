@@ -11,8 +11,8 @@ function map(address) {
     var mapOptions = {
         zoom: 17,
         center: latlng,
-        scrollwheel: false,
-        scaleControl: false,
+        scrollwheel: true,
+        scaleControl: true,
         disableDefaultUI: true,
         mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'gMap']
@@ -22,6 +22,7 @@ function map(address) {
     var geocoder_map = new google.maps.Geocoder();
     // address = "พระปรางค์วัดอรุณราชวรารามราชวรมหาวิหาร"
     // var address = document.getElementById("01").innerHTML;
+    console.log(address)
     geocoder_map.geocode({
         'address': address
     }, function(results, status) {

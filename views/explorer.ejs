@@ -482,8 +482,20 @@
     <script src="js/favorite.js"></script>
     <script src="js/api_search.js"></script>
     <script>
-        $(document).ready(setup(), readcookie(), map(lat[0], lat[1], lat[2], lat[3], lat[4], lng[0], lng[1], lng[2], lng[3], lng[4]));
+        $(document).ready(function() {
+            setup();
+            readcookie();
+            map(lat[0], lng[0]);
+
+        });
+        $(window).on("load", function() {
+            setup();
+            readcookie();
+            map(lat[0], lng[0]);
+        });
+        map(lat[0], lat[1], lat[2], lat[3], lat[4], lng[0], lng[1], lng[2], lng[3], lng[4])
     </script>
+
 </body>
 
 </html>
