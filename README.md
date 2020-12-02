@@ -8,4 +8,4 @@
 - Featured City Restaurants and Hotels.
 - List Restaurants and Hotels.
 - Contact to Dev. /Report Bug.
-- Google Map API Integration.
+- [x] Google Map API Integration.
