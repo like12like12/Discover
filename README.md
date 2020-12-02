@@ -4,8 +4,9 @@
 #### Web Application
 ### Features
 #### Restaurants Shopping Hotels //Event
-- Search Place by Country and Catagories.
-- Featured City Restaurants and Hotels.
-- List Restaurants and Hotels.
-- Contact to Dev. /Report Bug.
+- [x] Search Place by Country and Catagories.
+- [x] Featured City Restaurants and Hotels.
+- [ ] List Restaurants and Hotels.
+- [x] Contact to Dev. /Report Bug.
 - [x] Google Map API Integration.
+- [ ] Favorite Place in Cookie.
