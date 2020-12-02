@@ -32,7 +32,8 @@ $(document).ready(function() {
 
         //Lat
         lat[0] = JSON.stringify(json.result.latitude) + ','
-            //Lng
+
+        //Lng
         lng[0] = JSON.stringify(json.result.longitude)
 
 
