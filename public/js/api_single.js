@@ -12,24 +12,16 @@ $(document).ready(function() {
     const urlParams = new URLSearchParams(queryString);
     type = urlParams.get('type');
     id = urlParams.get('id');
-    // const Hotel = "ACCOMMODATION";
-    // const attraction = "ATTRACTION";
-    // const restaurant = "RESTAURANT";
-    // const shop = "SHOP";
-    // const other = "OTHER";
-
+    //defaultvalue
     if (type && id) {} else {
         type = "ATTRACTION"
         id = "P03012187"
     }
 
-
-
     $.getJSON("https://tatapi.tourismthailand.org/tatapi/v5/" + type + "/" + id, function(json) {
         console.log(json)
-        //Lat
+        //LatitudeLongitude
         lat[0] = JSON.stringify(json.result.latitude) + ','
-        //Lng
         lng[0] = JSON.stringify(json.result.longitude)
         
         document.getElementById("place_name").innerHTML = JSON.stringify(json.result.place_name).slice(1, -1)

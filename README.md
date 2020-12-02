@@ -6,7 +6,6 @@
 #### Restaurants Shopping Hotels //Event
 - [x] Search Place by Country and Catagories.
 - [x] Featured City Restaurants and Hotels.
-- [ ] List Restaurants and Hotels.
 - [x] Contact to Dev. /Report Bug.
 - [x] Google Map API Integration.
-- [ ] Save Favorite to Cookie.
+- [x] Save Favorite to Cookie.

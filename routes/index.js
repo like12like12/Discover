@@ -10,8 +10,8 @@ router.get('/explorer', function(req, res, next) {
     res.render('explorer', { title: 'Explorer' });
 });
 
-router.get('/listing', function(req, res, next) {
-    res.render('listing', { title: 'Listing' });
+router.get('/favorite', function(req, res, next) {
+    res.render('favorite', { title: 'favorite' });
 });
 
 router.get('/contact', function(req, res, next) {
