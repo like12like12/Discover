@@ -20,8 +20,6 @@ function map(address) {
     };
     map = new google.maps.Map(document.getElementById("exploreGoogleMap"), mapOptions);
     var geocoder_map = new google.maps.Geocoder();
-    // address = "พระปรางค์วัดอรุณราชวรารามราชวรมหาวิหาร"
-    // var address = document.getElementById("01").innerHTML;
     console.log(address)
     geocoder_map.geocode({
         'address': address
@@ -33,7 +31,7 @@ function map(address) {
                 position: map.getCenter()
             });
         } else {
-            // alert("Geocode was not successful for the following reason: " + status);
+            alert("Geocode was not successful for the following reason: " + status);
         }
     });
     var mapType = new google.maps.StyledMapType(stylez, {

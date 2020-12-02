@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <!-- Title -->
     <title>Discover</title>
-
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
-
     <!-- Core Stylesheet -->
     <link href="style.css" rel="stylesheet">
-
     <!-- Responsive CSS -->
     <link href="css/responsive/responsive.css" rel="stylesheet">
-
 </head>
-
 <body>
     <!-- Preloader -->
     <div id="preloader">
         <div class="dorne-load"></div>
     </div>
-
     <!-- ***** Search Form Area ***** -->
     <div class="dorne-search-form d-flex align-items-center">
         <div class="container">
@@ -44,7 +35,6 @@
             </div>
         </div>
     </div>
-
     <!-- ***** Header Area Start ***** -->
     <header class="header_area" id="header">
         <div class="container-fluid h-100">
@@ -75,13 +65,8 @@
             </div>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
-
     <!-- ***** Breadcumb Area Start ***** -->
-    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)">
-    </div>
-    <!-- ***** Breadcumb Area End ***** -->
-
+    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div>
     <!-- ***** Contact Area Start ***** -->
     <div class="dorne-contact-area d-md-flex" id="contact">
         <!-- Contact Form Area -->
@@ -100,7 +85,6 @@
                 <div class="contact-form-title">
                     <h6></h6>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
@@ -118,7 +102,6 @@
                         <button class="btn dorne-btn" id="submit">Send</button>
                     </div>
                 </div>
-
             </div>
         </div>
         <!-- Map Area -->
@@ -126,26 +109,6 @@
             <div id="googleMap"></div>
         </div>
     </div>
-    <!-- ***** Contact Area End ***** -->
-
-    <!-- ****** Footer Area Start ****** -->
-    <footer class="dorne-footer-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 d-md-flex align-items-center justify-content-between">
-                    <div class="footer-social-btns">
-                        <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ****** Footer Area End ****** -->
-
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
@@ -163,10 +126,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
 </body>
 <script>
-    $(document).ready(function() {
-        address = 'มหาวิทยาลัยหอการค้าไทย';
-    });
-
+    //map address
+    address = 'มหาวิทยาลัยหอการค้าไทย';
+    //send button
     function send() {
         $.ajax({
             url: "https://api.apispreadsheets.com/data/4052/",
@@ -181,7 +143,6 @@
         });
     }
 </script>
-
 <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -196,20 +157,17 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     var firestore = firebase.firestore();
-
     const docRef = firestore.doc("contacts/contactData");
     const name = document.querySelector("#name");
     const email = document.querySelector("#email");
     const subject = document.querySelector("#subject");
     const message = document.querySelector("#message");
     const submit = document.querySelector("#submit");
-
     submit.addEventListener("click", function() {
         const data1 = name.value;
         const data2 = email.value;
         const data3 = subject.value;
         const data4 = message.value;
-
         console.log("saveing " + name.value + email.value + subject.value + message.value);
         docRef.set({
             name: data1,
@@ -221,9 +179,7 @@
             alert("Submit Message Complete")
         }).catch(function(error) {
             console.log('err', error);
-
         });
     });
 </script>
-
 </html>

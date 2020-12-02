@@ -8,7 +8,6 @@ function readcookie() {
         console.log("No Cookie Saved")
     }
 }
-
 function fav(count) {
     alert("Faving")
     var json_str = JSON.stringify(arr);
@@ -17,14 +16,12 @@ function fav(count) {
     var json_str = JSON.stringify(arr);
     setCookie("mycookie", json_str, 30);
 }
-
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);

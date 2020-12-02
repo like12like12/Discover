@@ -8,7 +8,6 @@ function displayfavorite() {
                 'Accept-Language': 'th'
             }
         })
-        
         for (let i = 0; i < id.length; i++) {
                 api = "https://tatapi.tourismthailand.org/tatapi/v5/" + id[i]
                 $.getJSON(api, function(json) {
@@ -23,10 +22,7 @@ function displayfavorite() {
             })
         }
     }catch{}
-    
-    
 }
-
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);

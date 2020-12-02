@@ -2,8 +2,6 @@ var place_id = [""]
 var latlong = ""
 var lat = [""]
 var lng = [""]
-
-
 function setup() {
     $.ajaxSetup({
         headers: {
@@ -27,7 +25,6 @@ function setup() {
         api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + "วัด" + "&categories=" + "ALL" + "&provinceName=" + "";
     }
     const decodeurl = decodeURIComponent(api);
-
     $.getJSON(decodeurl, function(json) {
         console.log(json)
         //Lat
@@ -73,5 +70,6 @@ function setup() {
         document.getElementById("24").href = "http://localhost:3000/single-listing?type=" + JSON.stringify(json.result[2].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[2].place_id).slice(1, -1)
         document.getElementById("34").href = "http://localhost:3000/single-listing?type=" + JSON.stringify(json.result[3].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[3].place_id).slice(1, -1)
         document.getElementById("44").href = "http://localhost:3000/single-listing?type=" + JSON.stringify(json.result[4].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[4].place_id).slice(1, -1)
+        map(latlong)
     });
 }

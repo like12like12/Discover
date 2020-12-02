@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <!-- Title -->
     <title>Discover</title>
-
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
-
     <!-- Core Stylesheet -->
     <link href="style.css" rel="stylesheet">
-
     <!-- Responsive CSS -->
     <link href="css/responsive/responsive.css" rel="stylesheet">
-
 </head>
-
 <body>
     <!-- Preloader -->
     <div id="preloader">
         <div class="dorne-load"></div>
     </div>
-
     <!-- ***** Search Form Area ***** -->
     <div class="dorne-search-form d-flex align-items-center">
         <div class="container">
@@ -44,7 +36,6 @@
             </div>
         </div>
     </div>
-
     <!-- ***** Header Area Start ***** -->
     <header class="header_area" id="header">
         <div class="container-fluid h-100">
@@ -75,8 +66,6 @@
             </div>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
-
     <!-- ***** Breadcumb Area Start ***** -->
     <div class="breadcumb-area height-700 bg-img bg-overlay" id="img" style="background-image: url()">
         <div class="container">
@@ -90,8 +79,6 @@
             </div>
         </div>
     </div>
-    <!-- ***** Breadcumb Area End ***** -->
-
     <!-- ***** Single Listing Area Start ***** -->
     <section class="dorne-single-listing-area section-padding-100">
         <div class="container">
@@ -99,12 +86,10 @@
                 <!-- Single Listing Content -->
                 <div class="col-12 col-lg-8">
                     <div class="single-listing-content">
-
                         <div class="listing-title">
                             <h4 id="place_name"></h4>
                             <h6 id="district-province"></h6>
                         </div>
-
                         <div class="single-listing-nav">
                             <nav>
                                 <ul id="listingNav">
@@ -113,7 +98,6 @@
                                 </ul>
                             </nav>
                         </div>
-
                         <div class="overview-content mt-50">
                             <p id="overview"></p>
                         </div>
@@ -123,14 +107,12 @@
                                 <div id="locationMap"></div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
                 <!-- Listing Sidebar -->
                 <div class="col-12 col-md-8 col-lg-4">
                     <div class="listing-sidebar">
-                        <!-- Opening Hours Widget -->
+                        <!-- Opening Hours -->
                         <div id="open" class="opening-hours-widget mt-50">
                             <h6>Opening Hours</h6>
                             <ul class="opening-hours">
@@ -170,26 +152,6 @@
             </div>
         </div>
     </section>
-    <!-- ***** Single Listing Area End ***** -->
-
-    <!-- ****** Footer Area Start ****** -->
-    <footer class="dorne-footer-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 d-md-flex align-items-center justify-content-between">
-                    <div class="footer-social-btns">
-                        <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ****** Footer Area End ****** -->
-
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
@@ -204,16 +166,6 @@
     <!-- Active JS -->
     <script src="js/active.js"></script>
     <!-- api_place JS -->
-    <script src="js/api_place.js"></script>
-    <script>
-        $(document).ready(function() {
-            location_map(lat[0] + lng[0]);
-        });
-
-        $(window).on("load", function() {
-            location_map(lat[0] + lng[0]);
-        });
-    </script>
+    <script src="js/api_single.js"></script>
 </body>
-
 </html>

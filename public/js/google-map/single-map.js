@@ -1,4 +1,4 @@
-function location_map(latlong) {
+function map(latlong) {
     var map;
     var latlng = new google.maps.LatLng(41.9028, 12.4964);
     var stylez = [{
@@ -30,7 +30,7 @@ function location_map(latlong) {
                 position: map.getCenter()
             });
         } else {
-            // alert("Geocode was not successful for the following reason: " + status);
+            alert("Geocode was not successful for the following reason: " + status);
         }
     });
     var mapType = new google.maps.StyledMapType(stylez, {
