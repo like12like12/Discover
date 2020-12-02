@@ -2,7 +2,7 @@ var place_id = [""]
 var latlong = [""]
 var lat = [""]
 var lng = [""]
-var category_code = [""]
+
 
 function setup() {
     $.ajaxSetup({
@@ -51,7 +51,7 @@ function setup() {
         //document.getElementById("13").onclick = "map(" + json.result[1].latitude + ',' + json.result[1].longitude + ")"
 
 
-        console.log("single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1))
+
 
         //place_id
         place_id[0] = JSON.stringify(json.result[0].place_id).slice(1, -1)
@@ -59,15 +59,6 @@ function setup() {
         place_id[2] = JSON.stringify(json.result[2].place_id).slice(1, -1)
         place_id[3] = JSON.stringify(json.result[3].place_id).slice(1, -1)
         place_id[4] = JSON.stringify(json.result[4].place_id).slice(1, -1)
-
-        //category_code
-        category_code[0] = JSON.stringify(json.result[0].category_code).slice(1, -1)
-        category_code[1] = JSON.stringify(json.result[1].category_code).slice(1, -1)
-        category_code[2] = JSON.stringify(json.result[2].category_code).slice(1, -1)
-        category_code[3] = JSON.stringify(json.result[3].category_code).slice(1, -1)
-        category_code[4] = JSON.stringify(json.result[4].category_code).slice(1, -1)
-
-
 
 
 

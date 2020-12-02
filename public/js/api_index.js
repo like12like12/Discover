@@ -2,7 +2,6 @@ var name = ""
 $(document).ready(function() {
     var json_str = getCookie('mycookie');
         id = JSON.parse(json_str);
-    // id = ["P02000185", "P02000125", "P02000184", "P02000182", "P02000131", "P02000121"];
     $.ajaxSetup({
         headers: {
             'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',

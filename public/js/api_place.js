@@ -1,7 +1,6 @@
 var lat = [""]
 var lng = [""]
 
-
 $(document).ready(function() {
     $.ajaxSetup({
         headers: {
@@ -9,7 +8,6 @@ $(document).ready(function() {
             'Accept-Language': 'th'
         }
     });
-
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     type = urlParams.get('type');
@@ -32,22 +30,19 @@ $(document).ready(function() {
         console.log(json)
 
 
-
         //Lat
         lat[0] = JSON.stringify(json.result.latitude) + ','
-
-
-        //Lng
+            //Lng
         lng[0] = JSON.stringify(json.result.longitude)
-
 
 
 
         document.getElementById("place_name").innerHTML = JSON.stringify(json.result.place_name).slice(1, -1)
         document.getElementById("img").style = "background-image: url(" + JSON.stringify(json.result.web_picture_urls[0]).slice(1, -1) + ")"
         document.getElementById("district-province").innerHTML = "เมือง " + JSON.stringify(json.result.location.district).slice(1, -1) + " จังหวัด " + JSON.stringify(json.result.location.province).slice(1, -1)
-            //document.getElementById("location").innerHTML = JSON.stringify(json.result.latitude)
-        document.getElementById("overview").innerHTML = JSON.stringify(json.result.place_information.introduction).slice(1, -1)
+        document.getElementById("overview").innerHTML = JSON.stringify(json.result.place_information.introduction).slice(1, -1) + JSON.stringify(json.result.place_information.detail).slice(1, -1)
+        latlong = JSON.stringify(json.result.latitude) + ',' + JSON.stringify(json.result.longitude)
+
         if (json.result.opening_hours) {
             document.getElementById("day1").innerHTML = JSON.stringify(json.result.opening_hours.weekday_text.day1);
             document.getElementById("day2").innerHTML = JSON.stringify(json.result.opening_hours.weekday_text.day2);
@@ -60,11 +55,6 @@ $(document).ready(function() {
             document.getElementById("open").style.display = "none";
         }
     });
-
-
-    console.log(type);
-    console.log(id);
-    // console.log("https://tatapi.tourismthailand.org/tatapi/v5/" + type + "/" + id);
 
 
 })

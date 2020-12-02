@@ -20,7 +20,7 @@ function location_map(latlong) {
     };
     map = new google.maps.Map(document.getElementById("locationMap"), mapOptions);
     var geocoder_map = new google.maps.Geocoder();
-
+    console.log(latlong)
     geocoder_map.geocode({
         'address': latlong
     }, function(results, status) {
