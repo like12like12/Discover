@@ -31,7 +31,7 @@ function location_map(latlong) {
                 position: map.getCenter()
             });
         } else {
-            alert("Geocode was not successful for the following reason: " + status);
+            // alert("Geocode was not successful for the following reason: " + status);
         }
     });
     var mapType = new google.maps.StyledMapType(stylez, {

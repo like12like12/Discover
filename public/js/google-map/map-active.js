@@ -5,8 +5,8 @@ var stylez = [{
     elementType: "all",
     stylers: [{
         saturation: -50
-            }]
-        }];
+    }]
+}];
 var mapOptions = {
     zoom: 17,
     center: latlng,
@@ -22,7 +22,7 @@ var geocoder_map = new google.maps.Geocoder();
 address = 'มหาวิทยาลัยหอการค้าไทย';
 geocoder_map.geocode({
     'address': address
-}, function (results, status) {
+}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
         var marker = new google.maps.Marker({
@@ -30,7 +30,7 @@ geocoder_map.geocode({
             position: map.getCenter()
         });
     } else {
-        alert("Geocode was not successful for the following reason: " + status);
+        // alert("Geocode was not successful for the following reason: " + status);
     }
 });
 var mapType = new google.maps.StyledMapType(stylez, {
