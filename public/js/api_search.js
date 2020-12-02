@@ -1,5 +1,5 @@
 var place_id = [""]
-var latlong = [""]
+var latlong = ""
 var lat = [""]
 var lng = [""]
 
@@ -47,8 +47,8 @@ function setup() {
         lng[4] = JSON.stringify(json.result[4].longitude)
 
 
-
-        //document.getElementById("13").onclick = "map(" + json.result[1].latitude + ',' + json.result[1].longitude + ")"
+        latlong = JSON.stringify(json.result[0].latitude) + ',' + JSON.stringify(json.result[0].longitude)
+            //document.getElementById("13").onclick = "map(" + json.result[1].latitude + ',' + json.result[1].longitude + ")"
 
 
 
