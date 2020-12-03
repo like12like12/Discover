@@ -222,7 +222,7 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(0)><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(place_id[0])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -237,7 +237,7 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(1)><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(place_id[1])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -253,7 +253,7 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(2)><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(place_id[2])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -270,7 +270,7 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(3)><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(place_id[3])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -286,7 +286,7 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(4)><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(place_id[4])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -312,17 +312,17 @@
     <script src="js/google-map/explore-map.js"></script>
     <!-- Active JS -->
     <script src="js/active.js"></script>
-    <!-- Api Favorite -->
-    <script src="js/api_favorite.js"></script>
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
     <!-- Authen -->
     <script src="js/authen.js"></script>
+    <!-- Api Favorite -->
+    <script src="js/api_favorite.js"></script>
     <script>
         setup();
-        readcookie();
+        // readcookie();
     </script>
 </body>
 </html>

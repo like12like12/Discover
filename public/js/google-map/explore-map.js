@@ -20,7 +20,7 @@ function map(address) {
     };
     map = new google.maps.Map(document.getElementById("exploreGoogleMap"), mapOptions);
     var geocoder_map = new google.maps.Geocoder();
-    console.log(address)
+    // console.log(address)
     geocoder_map.geocode({
         'address': address
     }, function(results, status) {

@@ -5,8 +5,8 @@
         storageBucket: "discover-8bf53.appspot.com",
         projectId: "discover-8bf53",
     };
+    var arr={}
     firebase.initializeApp(config);
-    var db = firebase.firestore();
     $("#signup").click(function(){
         var name = $("#name").val().trim();;
         var email = $("#email").val().trim();;
@@ -48,7 +48,7 @@
         })
         .catch((error) => {
             var errorCode = error.code;
-            var errorMessage = error.message;ผ
+            var errorMessage = error.message;
             console.log(errorCode+errorMessage)
         });
     });
@@ -60,15 +60,15 @@
         .then((user) => {
             //user detail
             var user = firebase.auth().currentUser;
-            if (user != null) {
+            if (!user) {
                 user.providerData.forEach(function (profile) {
-                console.log("Sign-in provider: " + profile.providerId);
-                console.log("  Provider-specific UID: " + profile.uid);
-                console.log("  Name: " + profile.displayName);
-                console.log("  Email: " + profile.email);
-                console.log("  Photo URL: " + profile.photoURL);
-            });
-        }
+                    console.log("Sign-in provider: " + profile.providerId);
+                    console.log("  Provider-specific UID: " + profile.uid);
+                    console.log("  Name: " + profile.displayName);
+                    console.log("  Email: " + profile.email);
+                    console.log("  Photo URL: " + profile.photoURL);
+                });
+            }
         })
         .catch((error) => {
           var errorCode = error.code;
@@ -133,16 +133,32 @@
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             var user = firebase.auth().currentUser;
-            console.log("logged as "+user.displayName)
+            curuser = user.displayName;
+            console.log("logged as " + user.displayName)
             $("#navsignin").hide()
             $("#navprofile").show()
             $("#navprofile").html("Hi "+ user.displayName)
-            //  $("#navprofile").addClass("dorne-signin-btn")
             $("#navsignout").show()
-            var uid = user.uid;
         } else {
             $("#navsignin").show()
             $("#navprofile").hide()
             $("#navsignout").hide()
         }
     });
+
+    
+    // getdata()    
+    // function getdata(){
+    //     var docRef = db.collection("favorite").doc("qwer");
+    //     docRef.get().then(function(doc) {
+    //         if (doc.exists) {
+    //             console.log("Document data:", doc.data());
+    //             arr = JSON.parse(doc.data().fav)
+    //             console.log(arr)
+    //         } else {
+    //             console.log("No such document!");
+    //         }
+    //         }).catch(function(error) {
+    //             console.log("Error getting document:", error);
+    //         });
+    // }
