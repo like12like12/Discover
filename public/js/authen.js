@@ -2,9 +2,11 @@
         apiKey: "AIzaSyBjG9lEIkNT-TioHPnie58KAkjuz2vGrGM",
         authDomain: "discover-8bf53.firebaseapp.com",
         databaseURL: "https://discover-8bf53.firebaseio.com/",
-        storageBucket: "discover-8bf53.appspot.com"
+        storageBucket: "discover-8bf53.appspot.com",
+        projectId: "discover-8bf53",
     };
     firebase.initializeApp(config);
+    var db = firebase.firestore();
     $("#signup").click(function(){
         var name = $("#name").val().trim();;
         var email = $("#email").val().trim();;
@@ -81,19 +83,41 @@
             console.log(error)
           });
     });
-    // firebase.auth().onAuthStateChanged(function(user) {
-    //     if (user) {
-    //         $("#navsignin").css("display","none");
-    //         $("#navsignout").css("display","");
-    //     }else{
-    //         $("#navsignout").css("display","none");
-    //         $("#navsignin").css("display","");
-    //     }
-    //   });
+    $("#send").click(function(){
+        var name = $("#name").val().trim();;
+        var email = $("#email").val().trim();;
+        var subject = $("#subject").val().trim();;
+        var message = $("#message").val().trim();;
+        // db.collection("contact").doc("tesssst").set({
+        //     first: "test",
+        //     last: "tes",
+        //     born: 1815
+        // })
+        // .then(function() {
+        //     console.log("Document written with ID: "+db.doc);
+        // })
+        // .catch(function(error) {
+        //     console.error("Error adding document: ", error);
+        // });
+        db.collection("contact").add({
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+        })
+        .then(function(docRef) {
+            console.log("Sended Message with ID: "+docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+        
+    });
+
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             var user = firebase.auth().currentUser;
-            console.log(user.displayName)
+            console.log("logged as "+user.displayName)
             $("#navsignin").hide()
             $("#navprofile").show()
             $("#navprofile").html("Hi "+ user.displayName)
