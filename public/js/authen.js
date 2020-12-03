@@ -99,21 +99,37 @@
         // .catch(function(error) {
         //     console.error("Error adding document: ", error);
         // });
-        db.collection("contact").add({
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-        })
-        .then(function(docRef) {
-            console.log("Sended Message with ID: "+docRef.id);
-        })
-        .catch(function(error) {
-            console.error("Error adding document: ", error);
+        firebase.auth().currentUser((user) => {
+            if(user){
+                db.collection("contact").doc(user.displayName).set({
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message
+                })
+                .then(function() {
+                    console.log("Sended Message with User: "+user.displayName);
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+            }else{
+                db.collection("contact").add({
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message
+                })
+                .then(function(docRef) {
+                    console.log("Sended Message with ID: "+docRef.id);
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+            }
         });
-        
     });
-
+    
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             var user = firebase.auth().currentUser;
