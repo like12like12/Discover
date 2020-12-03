@@ -26,7 +26,7 @@
                     console.log("Sign in Successful")
                     //user detail
                     var user = firebase.auth().currentUser;
-                    if (user != null) {
+                    if (!user) {
                         user.providerData.forEach(function (profile) {
                         console.log("Sign-in provider: " + profile.providerId);
                         console.log("  Provider-specific UID: " + profile.uid);
