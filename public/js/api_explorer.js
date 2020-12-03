@@ -24,9 +24,13 @@ function setup() {
         document.getElementById('catagory').value = "ALL";
         api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + "วัด" + "&categories=" + "ALL" + "&provinceName=" + "";
     }
+    //decode api
     const decodeurl = decodeURIComponent(api);
+    //getjson
     $.getJSON(decodeurl, function(json) {
+        //result
         console.log(json)
+        //loop output
         for (let i = 0; i < 5; i++) {
             $.getJSON(api, function(json) {
                 //name
@@ -34,11 +38,15 @@ function setup() {
                 //destination
                 $(".destination").eq(i).text((JSON.stringify(json.result[i].destination).slice(1, -1)));
                 //href
-                $(".url").eq(i).attr("href", "http://localhost:3000/single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1));
+                $(".url").eq(i).attr("href", "/single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1));
                 //picture
-                try{
-                    $(".pic").eq(i).attr('src', JSON.stringify(json.result[i].thumbnail_url).slice(1, -1));
-                }catch{}
+                if(json.result[i].thumbnail_url){
+                    try{
+                        $(".pic").eq(i).attr('src', JSON.stringify(json.result[i].thumbnail_url).slice(1, -1));
+                    }catch{}
+                }else{
+                    $(".pic").eq(i).attr('src', "/img/noimage.png");
+                }
                 //latitude longitude
                 lat[i] = JSON.stringify(json.result[i].latitude) + ','
                 lng[i] = JSON.stringify(json.result[i].longitude)
@@ -46,7 +54,8 @@ function setup() {
                 place_id[i] = JSON.stringify(json.result[i].category_code).slice(1, -1) + "/" + JSON.stringify(json.result[i].place_id).slice(1, -1)
         })
     }
-        latlong = JSON.stringify(json.result[0].latitude) + ',' + JSON.stringify(json.result[0].longitude)
-        map(latlong)
+    //default map
+    latlong = JSON.stringify(json.result[0].latitude) + ',' + JSON.stringify(json.result[0].longitude)
+    map(latlong)
     });
 }

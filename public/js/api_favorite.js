@@ -15,6 +15,7 @@ function fav(count) {
     arr.push(JSON.stringify(place_id[count]).slice(1, -1))
     var json_str = JSON.stringify(arr);
     setCookie("mycookie", json_str, 30);
+    $("01").toggleClass("fa fa-heart");
 }
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();

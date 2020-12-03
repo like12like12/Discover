@@ -25,6 +25,18 @@
     margin: 0;
     padding: 0;
 }
+.btnnav {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  /* On mouse-over */
+  .btnnav:hover {outline:none;border: none;background: inherit;}
+  .btnnav:focus {outline:none;border: none;background: inherit;}
 
 #preloader {
     overflow: hidden;
@@ -427,14 +439,14 @@ li {
     cursor: pointer;
     text-align: center;
     opacity: 0.5;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    /* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; */
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
 }
 
 #closeBtn:hover {
     opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    /* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; */
 }
 
 #closeBtn > i {

@@ -12,14 +12,18 @@ function displayfavorite() {
                 api = "https://tatapi.tourismthailand.org/tatapi/v5/" + id[i]
                 $.getJSON(api, function(json) {
                     console.log(json)
+                    $(".pic").eq(i).attr('style', "/img/noimage.png");
+                    $(".result").eq(i).show();
                     console.log(JSON.stringify(json.result.place_name).slice(1, -1))
                     name = (JSON.stringify(json.result.place_name).slice(1, -1))
                     $(".name").eq(i).text((JSON.stringify(json.result.place_name).slice(1, -1)));
                     $(".destination").eq(i).text((JSON.stringify(json.result.destination).slice(1, -1)));
                     try{
                         $(".pic").eq(i).attr('src', JSON.stringify(json.result.web_picture_urls[0]).slice(1, -1));
-                    }catch{}
-            })
+                    }catch{
+                        $(".pic").eq(i).attr('src', "/img/noimage.png");
+                    }                    
+                })
         }
     }catch{}
 }

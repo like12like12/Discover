@@ -56,13 +56,17 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="favorite">Favorite <span class="sr-only">(current)</span></a>
                                 </li>
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="nav-link" href="contact">Contact <span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
-                            <!-- Signin btn -->
-                            <div class="btn-group dorne-signin-btn" id="navsignin">
-                                <a href="#"  class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign in  or  Sign up</a>
+                            <!-- profile -->
+                            <div class="dorne-signin-btn" id="navprofile" style="display: none;">
+                                <a href="#">Welcome name</a>
+                            </div>
+                            <!-- Sign in -->
+                            <div class="btn-group dorne-signin-btn" id="navsignin" style="display: none;">
+                                <a href="#"  class="dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign in  or  Sign up</a>
                                 <div class="dropdown-menu">
                                     <form class="px-4 py-3">
                                       <div class="form-group">
@@ -82,12 +86,13 @@
                                       <button type="button" value="signin" name="signin" id="signin" class="btn dorne-btn">Sign in</button>
                                     </form>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/register">New around here? Sign up</a>
+                                    <!-- <a class="dropdown-item" href="/register">New around here? Sign up</a> -->
                                     <a class="dropdown-item" href="#">Forgot password?</a>
                                 </div>
                             </div>
-                            <div class="dorne-signin-btn">
-                                <a id="navsignout">Sign out</a>
+                            <!-- Sign out -->
+                            <div class="dorne-signin-btn" id="navsignout">
+                                <a href="#">Sign out</a>
                             </div>
                         </div>
                     </nav>
@@ -102,41 +107,43 @@
         <!-- Contact Form Area -->
         <div class="contact-form-area equal-height">
             <div class="contact-text">
-                <h4>Contact with us</h4>
-                <p></p>
-                <div class="contact-info d-lg-flex">
+                <h4>Sign up</h4>
+                <!-- <div class="contact-info d-lg-flex">
                     <div class="single-contact-info">
                         <h6><i class="fa fa-envelope-o" aria-hidden="true"></i> contact@discover.com</h6>
                         <h6><i class="fa fa-phone" aria-hidden="true"></i> +6699-999-9999</h6>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="contact-form">
-                <div class="contact-form-title">
+                <!-- <div class="contact-form-title">
                     <h6></h6>
-                </div>
+                </div> -->
                 <div class="row">
-                    <div class="col-12 col-md-6">
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+                    <div class="col-12 col-md-8">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Name" value="qwer">
                     </div>
-                    <div class="col-12 col-md-6">
+                    <!-- <div class="col-12 col-md-6">
                         <input type="email" id="email" name="email" class="form-control" placeholder="Email Address">
+                    </div> -->
+                    <div class="col-12 col-md-8">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="qwer@qwer.com">
                     </div>
-                    <div class="col-12">
-                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+                    <div class="col-12 col-md-8">
+                        <input type="password" id="pass1" name="password" class="form-control" placeholder="Password" value="123456">
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 col-md-8">
+                        <input type="password" id="pass2" name="password" class="form-control" placeholder="Password" value="123456">
+                        <p id="length" >Password must Minimum <b>6 characters</b></p>
+                    </div>
+                    <!-- <div class="col-12">
                         <textarea name="message" id="message" class="form-control" id="Message" cols="30" rows="10" placeholder="Your Message"></textarea>
-                    </div>
+                    </div> -->
                     <div class="col-12">
-                        <button class="btn dorne-btn" id="submit" >Send</button>
+                        <button class="btn dorne-btn" id="signup" >Sign up</button>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Map Area -->
-        <div class="dorne-map-area equal-height">
-            <div id="googleMap"></div>
         </div>
     </div>
     <!-- jQuery-2.2.4 js -->
@@ -147,79 +154,13 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
     <script src="js/others/plugins.js"></script>
-    <!-- Google Maps js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdVg54QthqEizFpV7yGjQCJfHRFP3PnW0"></script>
-    <script src="js/google-map/contact-map.js"></script>
     <!-- Active JS -->
     <script src="js/active.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script> -->
-    <!-- authen -->
+    <!-- Authen -->
     <script src="js/authen.js"></script>
 </body>
-<script>
-    //map address
-    // address = 'มหาวิทยาลัยหอการค้าไทย';
-    //send button
-    // function send () {
-    //     $.ajax({
-    //         url: "https://api.apispreadsheets.com/data/4052/",
-    //         type: "post",
-    //         data: $("#data").serializeArray(),
-    //         success: function() {
-    //             alert("Submitted")
-    //         },
-    //         error: function() {
-    //             alert("กรุณากรอกข้อมูลให้ถูกต้องและครบทุกช่อง")
-    //         }
-    //     });
-    // }
-</script>
-<script>
-    // function signIn() {
-    //     var email = $("#emaillogin").val().trim();;
-    //     var password = $("#passlogin").val().trim();;
-    //     firebase.auth().signInWithEmailAndPassword(email, password)
-    //     .then((user) => {
-    //         alert("signin succes "+(user))
-    //     })
-    //     .catch((error) => {
-    //       var errorCode = error.code;
-    //       alert(errorCode)
-    //       var errorMessage = error.message;
-    //       alert(errorMessage)
-    //     });
-    // }
-  // Get a reference to the database service
-//   var database = firebase.database();
-//     // Initialize Firebase
-//     firebase.initializeApp(firebaseConfig);
-//     var firestore = firebase.firestore();
-//     const docRef = firestore.doc("contacts/contactData");
-//     const name = document.querySelector("#name");
-//     const email = document.querySelector("#email");
-//     const subject = document.querySelector("#subject");
-//     const message = document.querySelector("#message");
-//     const submit = document.querySelector("#submit");
-//     submit.addEventListener("click", function() {
-//         const data1 = name.value;
-//         const data2 = email.value;
-//         const data3 = subject.value;
-//         const data4 = message.value;
-//         console.log("saveing " + name.value + email.value + subject.value + message.value);
-//         docRef.set({
-//             name: data1,
-//             email: data2,
-//             subject: data3,
-//             message: data4
-//         }).then(function() {
-//             console.log('saved');
-//             alert("Submit Message Complete")
-//         }).catch(function(error) {
-//             console.log('err', error);
-//         });
-    // });
-</script>
 </html>
