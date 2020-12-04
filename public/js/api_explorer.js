@@ -2,7 +2,7 @@ var place_id = [""]
 var latlong = ""
 var lat = [""]
 var lng = [""]
-function setup() {
+function setupexplorer() {
     $.ajaxSetup({
         headers: {
             'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',

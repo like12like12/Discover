@@ -5,13 +5,14 @@
         storageBucket: "discover-8bf53.appspot.com",
         projectId: "discover-8bf53",
     };
-    var arr={}
+    var curuser = ""
     firebase.initializeApp(config);
+    // signup btn
     $("#signup").click(function(){
         var name = $("#name").val().trim();;
         var email = $("#email").val().trim();;
         var password = $("#pass2").val().trim();;
-        //regis
+        //register
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((user) => {
             //update name
@@ -20,7 +21,7 @@
                 displayName: name,
             }).then(function() {
                 console.log("Sign up Successful")
-                //login
+                //signin
                 firebase.auth().signInWithEmailAndPassword(email, password)
                 .then((user) => {
                     console.log("Sign in Successful")
@@ -35,15 +36,14 @@
                         console.log("  Photo URL: " + profile.photoURL);
                     });
                 }
-            })
-        .catch((error) => {
-          var errorCode = error.code;
-          alert(errorCode)
-          var errorMessage = error.message;
-          alert(errorMessage)
-        });
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    console.log(errorCode+errorMessage)
+                });
             }).catch(function(error) {
-              console.log(error)
+                console.log(error)
             });
         })
         .catch((error) => {
@@ -52,6 +52,7 @@
             console.log(errorCode+errorMessage)
         });
     });
+    // signin btn
     $("#signin").click(function(){
         var email = $("#emaillogin").val().trim();;
         var password = $("#passlogin").val().trim();;
@@ -76,6 +77,7 @@
           console.log(errorCode+errorMessage)
         });
     });
+    // signout btn
     $("#navsignout").click(function(){
         firebase.auth().signOut().then(function() {
             console.log("Sign out Succesful")
@@ -83,24 +85,15 @@
             console.log(error)
           });
     });
+    // send message btn
     $("#send").click(function(){
         var name = $("#name").val().trim();;
         var email = $("#email").val().trim();;
         var subject = $("#subject").val().trim();;
         var message = $("#message").val().trim();;
-        // db.collection("contact").doc("tesssst").set({
-        //     first: "test",
-        //     last: "tes",
-        //     born: 1815
-        // })
-        // .then(function() {
-        //     console.log("Document written with ID: "+db.doc);
-        // })
-        // .catch(function(error) {
-        //     console.error("Error adding document: ", error);
-        // });
         firebase.auth().currentUser((user) => {
             if(user){
+                //message to db with name
                 db.collection("contact").doc(user.displayName).set({
                     name: name,
                     email: email,
@@ -114,6 +107,7 @@
                     console.error("Error adding document: ", error);
                 });
             }else{
+                //messege to db with gen id
                 db.collection("contact").add({
                     name: name,
                     email: email,
@@ -129,7 +123,7 @@
             }
         });
     });
-    
+    //check signed in/out
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             var user = firebase.auth().currentUser;
@@ -145,20 +139,3 @@
             $("#navsignout").hide()
         }
     });
-
-    
-    // getdata()    
-    // function getdata(){
-    //     var docRef = db.collection("favorite").doc("qwer");
-    //     docRef.get().then(function(doc) {
-    //         if (doc.exists) {
-    //             console.log("Document data:", doc.data());
-    //             arr = JSON.parse(doc.data().fav)
-    //             console.log(arr)
-    //         } else {
-    //             console.log("No such document!");
-    //         }
-    //         }).catch(function(error) {
-    //             console.log("Error getting document:", error);
-    //         });
-    // }
