@@ -19,15 +19,18 @@ router.get('/contact', function(req, res, next) {
 });
 
 router.get('/single-listing', function(req, res, next) {
-    res.render('single-listing', { title: 'Listing'});
+    res.render('single-listing', { title: 'Listing' });
 });
 
 router.get('/register', function(req, res, next) {
-    res.render('register', { title: 'register'});
+    res.render('register', { title: 'register' });
 });
 
 router.get('/signin', function(req, res, next) {
-    res.render('signin', { title: 'signin'});
+    res.render('signin', { title: 'signin' });
 });
 
+router.get('/admin', function(req, res, next) {
+    res.render('admin', { title: 'admin' });
+});
 module.exports = router;
