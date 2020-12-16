@@ -156,8 +156,9 @@
     const updateBtn = document.getElementById('updateBtn');
     const readBtn = document.getElementById('readBtn');
     const removeBtn = document.getElementById('removeBtn');
-    const a = document.getElementById('a');
+    const log = document.getElementById('log');
 
+    //add
     addBtn.addEventListener('click', e => {
         e.preventDefault();
         const ID = contact.doc(doc.value).set({
@@ -174,7 +175,7 @@
                 console.error(error)
             });
     });
-
+    //update
     updateBtn.addEventListener('click', e => {
         e.preventDefault();
         contact.doc(doc.value).update({
@@ -186,12 +187,12 @@
 
     });
 
-
+    //remove
     removeBtn.addEventListener('click', e => {
         e.preventDefault();
         contact.doc(doc.value).delete();
     });
-
+    //read
     readBtn.addEventListener('click', e => {
         e.preventDefault();
 
@@ -217,12 +218,12 @@
             // doc.data() is never undefined for query doc snapshots
 
             console.log(doc.id, " => ", doc.data());
-            console.old(doc.id, " => ", doc.data());
 
 
         });
     });
 
+    //console.old
     (function(logger) {
         console.old = console.log;
         console.log = function() {
@@ -249,4 +250,4 @@
             logger.innerHTML += output + "<br>";
             console.old.apply(undefined, arguments);
         };
-    })(document.getElementById("log"));
+    })(log);
