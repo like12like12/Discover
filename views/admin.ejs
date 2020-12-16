@@ -17,7 +17,7 @@
 <body>
     <main>
 
-        <div class="row">
+        <div id=a lass="row">
             <div class="column">
                 <form>
                     <label for="document">document</label><br>
@@ -43,10 +43,14 @@
             </div>
             <div class="column">
                 <form>
-                    <h4> Logger</h4>
+                    <h3> Logger </h3>
+                    <h5> Document </h5>
                     <p id='log'> </p>
-                    <p id='id'> </p>
-                    <p id='e'> </p>
+                    <h5>Result </h5>
+                    <p id='result'> </p>
+
+
+                    <button id="refreshBtn" class="btn waves-effect red darken-1">refresh</button>
                 </form>
             </div>
         </div>
@@ -91,7 +95,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
     <!-- Authen -->
-    <script src="js/authen.js"></script>
+    <script src="js/admin.js"></script>
     <script>
     </script>
 
