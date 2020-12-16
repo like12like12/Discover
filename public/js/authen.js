@@ -216,14 +216,15 @@
     contact.get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
-
+            //doc.id = document ,doc.data() = json
             console.log(doc.id, " => ", doc.data());
+
 
 
         });
     });
 
-    //console.old
+    //console.old 
     (function(logger) {
         console.old = console.log;
         console.log = function() {
