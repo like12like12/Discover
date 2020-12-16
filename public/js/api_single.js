@@ -25,9 +25,10 @@ var lng = [""]
         }catch{}
         //address
         document.getElementById("district-province").innerHTML = "เมือง " + JSON.stringify(json.result.location.district).slice(1, -1) + " จังหวัด " + JSON.stringify(json.result.location.province).slice(1, -1)
-        //overview
-        if(json.result.place_information.introduction){
-            document.getElementById("overview").innerHTML = JSON.stringify(json.result.place_information.introduction).slice(1, -1) + JSON.stringify(json.result.place_information.detail).slice(1, -1)
+        //detail
+        if(json.result.place_information.detail){
+            document.getElementById("overview").innerHTML = JSON.stringify(json.result.place_information.introduction).slice(1, -1)
+            document.getElementById("detail").innerHTML = JSON.stringify(json.result.place_information.detail).slice(1, -1)
         }else{
             document.getElementById("overviewheader").style.display = "none";
         }
