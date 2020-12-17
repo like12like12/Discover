@@ -13,9 +13,9 @@ main {
 }
 
 form {
-    width: 400px;
+    width: 550;
     border: solid 1px #EBEBEB;
-    padding: 5rem;
+    padding: 1rem;
 }
 
 button {
@@ -31,7 +31,7 @@ button {
 
 .column {
     float: left;
-    width: 450px;
+    width: 600px;
     padding: 10px;
     height: 500px;
     /* Should be removed. Only for demonstration */
@@ -44,4 +44,11 @@ button {
     content: "";
     display: table;
     clear: both;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
 }

@@ -76,12 +76,11 @@ readBtn.addEventListener('click', e => {
                 console.log('name: ' + JSON.stringify(user.data().name));
                 console.log('subject: ' + JSON.stringify(user.data().subject));
 
-                document.getElementById("result").innerHTML = doc.value
-                document.getElementById("result").innerHTML += '<br>' + 'email: ' + JSON.stringify(user.data().email);
-                document.getElementById("result").innerHTML += '<br>' + 'message: ' + JSON.stringify(user.data().message);
-                document.getElementById("result").innerHTML += '<br>' + 'name: ' + JSON.stringify(user.data().name);
-                document.getElementById("result").innerHTML += '<br>' + 'subject: ' + JSON.stringify(user.data().subject);
-
+                document.getElementById("1").innerHTML = doc.value
+                document.getElementById("2").innerHTML = JSON.stringify(user.data().email).slice(1, -1)
+                document.getElementById("3").innerHTML = JSON.stringify(user.data().message).slice(1, -1)
+                document.getElementById("4").innerHTML = JSON.stringify(user.data().name).slice(1, -1)
+                document.getElementById("5").innerHTML = JSON.stringify(user.data().subject).slice(1, -1)
             } else {
                 console.log('Document does not exist !');
                 alert('Document does not exist !');
@@ -101,6 +100,11 @@ contact.get().then(function(querySnapshot) {
         //doc.id = document ,doc.data() = json
         console.log(doc.id, " => ", doc.data());
         document.getElementById("log").innerHTML += doc.id + '<br>'
+        document.getElementById("1").innerHTML += doc.id + '<br><br>'
+        document.getElementById("2").innerHTML += JSON.stringify(doc.data().email).slice(1, -1) + '<br><br>'
+        document.getElementById("3").innerHTML += JSON.stringify(doc.data().message).slice(1, -1) + '<br><br>'
+        document.getElementById("4").innerHTML += JSON.stringify(doc.data().name).slice(1, -1) + '<br><br>'
+        document.getElementById("5").innerHTML += JSON.stringify(doc.data().subject).slice(1, -1) + '<br><br>'
 
 
 
