@@ -5,11 +5,10 @@
         storageBucket: "discover-8bf53.appspot.com",
         projectId: "discover-8bf53",
     };
-    var curuser = ""
     firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
+    var user = firebase.auth().currentUser;
+    
     // signup btn
-
     $("#signup").click(function() {
         var name = $("#name").val().trim();;
         var email = $("#email").val().trim();;
@@ -89,11 +88,12 @@
     });
     // send message btn
     $("#send").click(function() {
+        const db = firebase.firestore();
         var name = $("#name").val().trim();;
         var email = $("#email").val().trim();;
         var subject = $("#subject").val().trim();;
         var message = $("#message").val().trim();;
-        firebase.auth().currentUser((user) => {
+        user = localStorage.getItem("currentuser")
             if (user) {
                 //message to db with name
                 db.collection("contact").doc(user.displayName).set({
@@ -103,7 +103,7 @@
                         message: message
                     })
                     .then(function() {
-                        console.log("Sended Message with User: " + user.displayName);
+                        console.log("Sended Message with User: " + user);
                     })
                     .catch(function(error) {
                         console.error("Error adding document: ", error);
@@ -123,19 +123,19 @@
                         console.error("Error adding document: ", error);
                     });
             }
-        });
+
     });
     //check signed in/out
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-            var user = firebase.auth().currentUser;
-            curuser = user.displayName;
+            localStorage.setItem('currentuser', user.displayName)
             console.log("logged as " + user.displayName)
             $("#navsignin").hide()
             $("#navprofile").show()
             $("#navprofile").html("Hi " + user.displayName)
             $("#navsignout").show()
         } else {
+            localStorage.removeItem('currentuser')
             $("#navsignin").show()
             $("#navprofile").hide()
             $("#navsignout").hide()
