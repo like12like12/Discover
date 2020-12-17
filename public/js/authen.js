@@ -93,8 +93,7 @@
         var email = $("#email").val().trim();;
         var subject = $("#subject").val().trim();;
         var message = $("#message").val().trim();;
-
-        firebase.auth().currentUser((user) => {
+        firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 //message to db with name
                 db.collection("contact").doc(user.displayName).set({
