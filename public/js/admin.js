@@ -5,10 +5,8 @@ var firebaseConfig = {
     storageBucket: "discover-8bf53.appspot.com",
     projectId: "discover-8bf53",
 };
-var curuser = ""
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-
 const contact = db.collection('contact');
 const doc = document.getElementById('doc');
 const email = document.getElementById('email');
