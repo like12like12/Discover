@@ -6,6 +6,7 @@ firebase.auth().onAuthStateChanged((user) => {
         docRef.get().then(function(doc) {
             if (doc.exists) {
                 localStorage.setItem('array', doc.data().fav)
+                $(".fa-trash").show()
             } else {
                 console.log("No such document!");
                 $("#favtitle").text("No Favorite Place");
@@ -28,6 +29,7 @@ function setupfavorite(){
                 arr = JSON.parse(localStorage.getItem("array"))
                 console.log(arr)
                 if (arr) {
+                    $("#favtitle").hide()
                     $.ajaxSetup({
                         headers: {
                             'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
@@ -61,10 +63,9 @@ function fav(arr,place_id,count) {
     //fav to array
     arr.push(place_id)
     var json_str = JSON.stringify(arr);
-    localStorage.clear()
+    localStorage.removeItem('array')
     localStorage.setItem('array', json_str)
     //json to db
-        // var db = firebase.firestore();
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 // add to db

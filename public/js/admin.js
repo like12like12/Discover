@@ -104,7 +104,7 @@ contact.get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
         //doc.id = document ,doc.data() = json
-        console.log(doc.id, " => ", doc.data());
+        // console.log(doc.id, " => ", doc.data());
         //document.getElementById("log").innerHTML += doc.id + '<br>'
         document.getElementById("1").innerHTML += doc.id + '<br><br>'
         document.getElementById("2").innerHTML += JSON.stringify(doc.data().name).slice(1, -1) + '<br><br>'

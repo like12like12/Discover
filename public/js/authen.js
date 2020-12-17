@@ -108,7 +108,7 @@
         var message = $("#message").val().trim();;
         user = localStorage.getItem("currentuser")
             if (user) {
-                //message to db with name
+                // message to db with name
                 db.collection("contact").doc(user.displayName).set({
                         name: name,
                         email: email,
@@ -116,7 +116,7 @@
                         message: message
                     })
                     .then(function() {
-                        console.log("Sended Message with User: " + user);
+                            // console.log("Sended Message with User: " + user);
                         $.notify({
                             message: 'Message Sended as ' + user
                         },{
@@ -134,7 +134,7 @@
                         });
                     });
             } else {
-                //messege to db with gen id
+                // messege to db with gen id
                 db.collection("contact").add({
                         name: name,
                         email: email,
@@ -142,7 +142,7 @@
                         message: message
                     })
                     .then(function(docRef) {
-                        console.log("Sended Message with Ticket: " + docRef.id);
+                            // console.log("Sended Message with Ticket: " + docRef.id);
                         $.notify({
                             message: 'Message Sended with Ticket: ' + docRef.id
                         },{
@@ -156,11 +156,11 @@
             }
 
     });
-    //check signed in/out
+    // check signed in/out
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             localStorage.setItem('currentuser', user.displayName)
-            // console.log("logged as " + user.displayName)
+                // console.log("logged as " + user.displayName)
             $("#navsignin").hide()
             $("#navprofile").show()
             $("#navprofile").html("Hi " + user.displayName)
@@ -170,5 +170,9 @@
             $("#navsignin").show()
             $("#navprofile").hide()
             $("#navsignout").hide()
+            $(".fa-trash").hide()
+            $("#favtitle").show()
+            $("#favtitle").text("Plases Sign in to use this function");
+            $(".result").hide();
         }
     });
