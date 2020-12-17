@@ -1,32 +1,32 @@
-var arr=[""]
+var db = firebase.firestore();
 firebase.auth().onAuthStateChanged((user) => {
-    var db = firebase.firestore();
     if(user){
         var docRef = db.collection("favorite").doc(user.displayName);
         docRef.get().then(function(doc) {
             if (doc.exists) {
-                arr = JSON.parse(doc.data().fav)
-                console.log("here"+arr)
+                localStorage.setItem('array', doc.data().fav)
             } else {
                 console.log("No such document!");
                 $("#favtitle").text("No Favorite Place");
-                var arr=[""]
+                arr=[]
             }
             }).catch(function(error) {
                 console.log("Error getting document:", error);
+                $("#favtitle").text("No Favorite Place");
             });
     }else{
         $("#favtitle").text("Plases Sign in to use this function");
     }
-    console.log(arr)
-    return arr
+    // console.log(arr)
     });
 function setupfavorite(){
 firebase.auth().onAuthStateChanged((user) => {
-    var db = firebase.firestore();
+    // var db = firebase.firestore();
     if(user){
         var docRef = db.collection("favorite").doc(user.displayName);
         docRef.get().then(function(doc) {
+            arr = JSON.parse(localStorage.getItem("array"))
+            console.log(arr)
             if (arr) {
                 $.ajaxSetup({
                     headers: {
@@ -56,10 +56,12 @@ firebase.auth().onAuthStateChanged((user) => {
     }
     });
 }
-function fav(arr,place_id) {
+function fav(arr,place_id,count) {
     //fav to array
     arr.push(place_id)
     var json_str = JSON.stringify(arr);
+    localStorage.clear()
+    localStorage.setItem('array', json_str)
     //json to db
     var db = firebase.firestore();
     firebase.auth().onAuthStateChanged(function(user) {
@@ -70,6 +72,8 @@ function fav(arr,place_id) {
             .then(function() {
                 alert("Added to Favorite")
                 console.log("Added: "+json_str);
+                $(".favicon").eq(count).removeClass("fa-heart-o");
+                $(".favicon").eq(count).addClass("fa-heart");
             })
             .catch(function(error) {
                 console.error("Error adding document: ", error);
@@ -78,4 +82,27 @@ function fav(arr,place_id) {
             console.log("signed out")
         }
       });
+}
+function delfav(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            db.collection("favorite").doc(user.displayName).delete().then(function() {
+                // console.log(user.displayName)
+                console.log("Document successfully deleted!");
+                localStorage.clear()
+                $(".result").hide();
+                $("#favtitle").text("No Favorite Place");
+                $.notify({
+                    message: 'Favorite Deleted' 
+                },{
+                    type: 'warning',
+                    delay: 1000,
+                });
+            }).catch(function(error) {
+                console.error("Error removing document: ", error);
+            });
+        } else {
+            console.log("signed out")
+        }
+});
 }

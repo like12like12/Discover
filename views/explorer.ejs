@@ -212,7 +212,7 @@
             <!-- Explore Search Result -->
             <div class="explore-search-result">
                 <!-- Single Features Area -->
-                <div class="single-features-area">
+                <div class="single-features-area" style="display: none">
                     <img class='pic' style="width:100%" onclick=map(lat[0]+lng[0]) src="">
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
@@ -222,12 +222,12 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(arr,place_id[0])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(arr,place_id[0],0)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
+                <div class="single-features-area" style="display: none">
                     <img class='pic' style="width:100%" onclick=map(lat[1]+lng[1]) src="">
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
@@ -237,12 +237,12 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(arr,place_id[1])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(arr,place_id[1],1)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
+                <div class="single-features-area" style="display: none">
                     <img class='pic' style="width:100%" onclick=map(lat[2]+lng[2]) src="">
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
@@ -253,12 +253,12 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(arr,place_id[2])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(arr,place_id[2],2)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
+                <div class="single-features-area" style="display: none">
                     <img class='pic' style="width:100%" onclick=map(lat[3]+lng[3]) src="">
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
@@ -270,12 +270,12 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(arr,place_id[3])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(arr,place_id[3],3)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Single Features Area -->
-                <div class="single-features-area">
+                <div class="single-features-area" style="display: none">
                     <img class='pic' style="width:100%" onclick=map(lat[4]+lng[4]) src="">
                     <div class="feature-content d-flex align-items-center justify-content-between">
                         <div class="feature-title">
@@ -286,7 +286,7 @@
                             <p class="destination"></p>
                         </div>
                         <div class="feature-favourite">
-                            <a onclick=fav(arr,place_id[4])><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a onclick=fav(arr,place_id[4],4)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -303,6 +303,10 @@
     <script src="js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap-4 js -->
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- Bootstrap-Notify -->
+    <script src="js/bootstrap/bootstrap-notify.min.js"></script>
+    <!-- Bootstrap-Notify -->
+    <script src="js/bootstrap/bootstrap-notify.min.js"></script>
     <!-- All Plugins js -->
     <script src="js/others/plugins.js"></script>
     <!-- Api Explorer -->
@@ -322,7 +326,6 @@
     <script src="js/api_favorite.js"></script>
     <script>
         setupexplorer();
-        // readcookie();
     </script>
 </body>
 </html>

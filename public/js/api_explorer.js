@@ -3,6 +3,8 @@ var latlong = ""
 var lat = [""]
 var lng = [""]
 function setupexplorer() {
+    arr = JSON.parse(localStorage.getItem("array"))
+    console.log("fav= " + arr)
     $.ajaxSetup({
         headers: {
             'Authorization': 'bearer G(LsNMYQxwthtlPATlMG9zWWTmzqnzcNuK6fQeo86o0KzNSdoF2kMFReYcJ2KwTCpq8QfxXKL00BqUe7Jt4TJtW=====2',
@@ -17,28 +19,29 @@ function setupexplorer() {
     document.getElementById('keyword').value = keyword;
     document.getElementById('destination').value = destination;
     document.getElementById('catagory').value = catagory;
-    api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + catagory + "&provinceName=" + destination;
-    if (keyword && destination && catagory) {} else {
+    api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + keyword + "&categories=" + catagory + "&provinceName=" + destination + "&numberOfResult=5";
+    if (!keyword && !destination && !catagory) {
         document.getElementById('keyword').value = keyword;
         document.getElementById('destination').value = "Bangkok";
         document.getElementById('catagory').value = "ALL";
-        api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + "วัด" + "&categories=" + "ALL" + "&provinceName=" + "";
+        api = "https://tatapi.tourismthailand.org/tatapi/v5/places/search?keyword=" + "วัด" + "&categories=" + "ALL" + "&provinceName=" + "" + "&numberOfResult=5";
     }
     //decode api
     const decodeurl = decodeURIComponent(api);
     //getjson
     $.getJSON(decodeurl, function(json) {
         //result
-        console.log(json)
+        console.log("result" + json)
         //loop output
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < json.result.length; i++) {
             $.getJSON(api, function(json) {
+                $(".single-features-area").eq(i).show();
                 //name
                 $(".name").eq(i).text((JSON.stringify(json.result[i].place_name).slice(1, -1)));
                 //destination
                 $(".destination").eq(i).text((JSON.stringify(json.result[i].destination).slice(1, -1)));
                 //href
-                $(".url").eq(i).attr("href", "/single-listing?type=" + JSON.stringify(json.result[0].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[0].place_id).slice(1, -1));
+                $(".url").eq(i).attr("href", "/single-listing?type=" + JSON.stringify(json.result[i].category_code).slice(1, -1) + "&id=" + JSON.stringify(json.result[i].place_id).slice(1, -1));
                 //picture
                 if(json.result[i].thumbnail_url){
                     try{
@@ -52,6 +55,13 @@ function setupexplorer() {
                 lng[i] = JSON.stringify(json.result[i].longitude)
                 //fav
                 place_id[i] = JSON.stringify(json.result[i].category_code).slice(1, -1) + "/" + JSON.stringify(json.result[i].place_id).slice(1, -1)
+                favid = JSON.stringify(json.result[i].category_code).slice(1, -1) + "/" + JSON.stringify(json.result[i].place_id).slice(1, -1)
+                try{
+                    if (arr.includes(favid)){
+                        $(".favicon").eq(i).removeClass("fa-heart-o");
+                        $(".favicon").eq(i).addClass("fa-heart");
+                    }
+                }catch{}
         })
     }
     //default map

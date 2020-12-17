@@ -28,13 +28,14 @@
                             console.log("Sign in Successful")
                                 //user detail
                             var user = firebase.auth().currentUser;
-                            if (!user) {
+                            if (user) {
                                 user.providerData.forEach(function(profile) {
                                     console.log("Sign-in provider: " + profile.providerId);
                                     console.log("  Provider-specific UID: " + profile.uid);
                                     console.log("  Name: " + profile.displayName);
                                     console.log("  Email: " + profile.email);
                                     console.log("  Photo URL: " + profile.photoURL);
+                                    $("#navprofile").html("Hi " + profile.displayName)
                                 });
                             }
                         })
@@ -62,7 +63,7 @@
             .then((user) => {
                 //user detail
                 var user = firebase.auth().currentUser;
-                if (!user) {
+                if (user) {
                     user.providerData.forEach(function(profile) {
                         console.log("Sign-in provider: " + profile.providerId);
                         console.log("  Provider-specific UID: " + profile.uid);
@@ -71,6 +72,12 @@
                         console.log("  Photo URL: " + profile.photoURL);
                     });
                 }
+                $.notify({
+                    message: 'Signed In' 
+                },{
+                    type: 'success',
+                    delay: 1000,
+                });
             })
             .catch((error) => {
                 var errorCode = error.code;
@@ -82,6 +89,12 @@
     $("#navsignout").click(function() {
         firebase.auth().signOut().then(function() {
             console.log("Sign out Succesful")
+            $.notify({
+                message: 'Signed Out' 
+            },{
+                type: 'warning',
+                delay: 1000,
+            });
         }).catch(function(error) {
             console.log(error)
         });
@@ -104,9 +117,21 @@
                     })
                     .then(function() {
                         console.log("Sended Message with User: " + user);
+                        $.notify({
+                            message: 'Message Sended as ' + user
+                        },{
+                            type: 'success',
+                            delay: 1000,
+                        });
                     })
                     .catch(function(error) {
                         console.error("Error adding document: ", error);
+                        $.notify({
+                            message: 'Error' 
+                        },{
+                            type: 'danger',
+                            delay: 1000,
+                        });
                     });
             } else {
                 //messege to db with gen id
@@ -117,7 +142,13 @@
                         message: message
                     })
                     .then(function(docRef) {
-                        console.log("Sended Message with ID: " + docRef.id);
+                        console.log("Sended Message with Ticket: " + docRef.id);
+                        $.notify({
+                            message: 'Message Sended with Ticket: ' + docRef.id
+                        },{
+                            type: 'success',
+                            delay: 5000,
+                        });
                     })
                     .catch(function(error) {
                         console.error("Error adding document: ", error);
@@ -129,7 +160,7 @@
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             localStorage.setItem('currentuser', user.displayName)
-            console.log("logged as " + user.displayName)
+            // console.log("logged as " + user.displayName)
             $("#navsignin").hide()
             $("#navprofile").show()
             $("#navprofile").html("Hi " + user.displayName)
