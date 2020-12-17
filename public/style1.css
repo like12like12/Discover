@@ -31,7 +31,7 @@ button {
 
 .column {
     float: left;
-    width: 600px;
+    width: 1000px;
     padding: 10px;
     height: 500px;
     /* Should be removed. Only for demonstration */
