@@ -28,7 +28,7 @@ function setupfavorite(){
             docRef.get().then(function(doc) {
                 arr = JSON.parse(localStorage.getItem("array"))
                 console.log(arr)
-                if (arr) {
+                if (arr != "") {
                     $("#favtitle").hide()
                     $.ajaxSetup({
                         headers: {
@@ -51,6 +51,9 @@ function setupfavorite(){
                                 }                    
                             })
                     }
+                }else{
+                    $("#favtitle").text("No Favorite Place");
+                    $(".fa-trash").hide()
                 }
             });
         }else{
@@ -93,7 +96,7 @@ function fav(arr,place_id,count) {
             }
         });
     }else{
-        // remove fav from array
+        //remove fav from array
         arr.splice(arr.indexOf(place_id), 1);
         var json_str = JSON.stringify(arr);
         localStorage.setItem('array', json_str)

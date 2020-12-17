@@ -8,4 +8,5 @@
 - [x] Featured City Restaurants and Hotels.
 - [x] Contact to Dev. /Report Bug.
 - [x] Google Map API Integration.
-- [x] Save Favorite to Cookie.
+- [x] Firebase Authentication Login.
+- [x] Save Favorite Place to Firebase Cloud.
