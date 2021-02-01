@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title>Discover</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <!-- Core Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="css/responsive/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="dorne-load"></div>
+    </div>
+    <!-- ***** Search Form Area ***** -->
+    <div class="dorne-search-form d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-close-btn" id="closeBtn">
+                        <i class="pe-7s-close-circle" aria-hidden="true"></i>
+                    </div>
+                    <form action="#" method="get">
+                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Desire Destinations or Events">
+                        <input type="submit" class="d-none" value="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header_area" id="header">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <nav class="h-100 navbar navbar-expand-lg">
+                        <h1 class="nav-link" style="color:rgb(255, 255, 255)" href="/">Discover </h1>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
+                        <!-- Nav -->
+                        <div class="collapse navbar-collapse" id="dorneNav">
+                            <ul class="navbar-nav mr-auto" id="dorneMenu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="explorer">Explore <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="favorite">Favorite <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact">Contact <span class="sr-only">(current)</span></a>
+                                </li>
+                            </ul>
+                            <!-- profile -->
+                            <div class="nav-link" id="navprofile" style="display: none;">
+                                <a href="#">Welcome name</a>
+                            </div>
+                            <!-- Sign in -->
+                            <div class="btn-group dorne-signin-btn" id="navsignin" style="display: none;">
+                                <a href="#"  class="dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign in  or  Sign up</a>
+                                <div class="dropdown-menu">
+                                    <form class="px-4 py-3">
+                                      <div class="form-group">
+                                        <label for="exampleDropdownFormEmail1">Email address</label>
+                                        <input type="email" class="form-control" id="emaillogin" placeholder="email@example.com" value="qwer@qwer.com">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleDropdownFormPassword1">Password</label>
+                                        <input type="password" class="form-control" id="passlogin" placeholder="Password" value="123456">
+                                      </div>
+                                      <!-- <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                        <label class="form-check-label" for="dropdownCheck">
+                                          Remember me
+                                        </label>
+                                      </div> -->
+                                      <button type="button" value="signin" name="signin" id="signin" class="btn dorne-btn">Sign in</button>
+                                    </form>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/register">New around here? Sign up</a>
+                                    <!-- <a class="dropdown-item" href="#">Forgot password?</a> -->
+                                </div>
+                            </div>
+                            <!-- Sign out -->
+                            <div class="dorne-signin-btn" id="navsignout">
+                                <a href="#">Sign out</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Breadcumb Area Start ***** -->
+    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)">
+    </div>
+    <!-- Explore Area -->
+    <section class="dorne-explore-area d-md-flex">
+        <!-- Explore Search Area -->
+        <div class="explore-search-area d-md-flex">
+            <!-- Explore Search Form -->
+            <div class="explore-search-form">
+                <h6>What are you looking for?</h6>
+                <!-- Tabs -->
+                <div class="nav nav-tabs" id="heroTab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places" role="tab" aria-controls="nav-places" aria-selected="true">Places</a>
+                </div>
+                <!-- Tabs Content -->
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-places" aria-labelledby="nav-places-tab">
+                        <form action="explorer" method="get">
+                            <input type="text" id="keyword" name='keyword' class="form-control custom-select" placeholder="Keyword">
+                            <select name="destination" class="custom-select" id="destination">
+                                <!-- <option value="">All City</option> -->
+                                <option value="Bangkok">Bangkok</option>
+                                <option value="Amnat Charoen">Amnat Charoen</option>
+                                <option value="Ang Thong">Ang Thong</option>
+                                <option value="Bueng Kan">Bueng Kan</option>
+                                <option value="Buriram">Buriram</option>
+                                <option value="Chachoengsao">Chachoengsao</option>
+                                <option value="Chai Nat">Chai Nat</option>
+                                <option value="Chaiyaphum">Chaiyaphum</option>
+                                <option value="Chanthaburi">Chanthaburi</option>
+                                <option value="Chiang Mai">Chiang Mai</option>
+                                <option value="Chiang Rai">Chiang Rai</option>
+                                <option value="Chonburi">Chonburi</option>
+                                <option value="Chumphon">Chumphon</option>
+                                <option value="Kalasin">Kalasin</option>
+                                <option value="Kamphaeng Phet">Kamphaeng Phet</option>
+                                <option value="Kanchanaburi">Kanchanaburi</option>
+                                <option value="Khon Kaen">Khon Kaen</option>
+                                <option value="Krabi">Krabi</option>
+                                <option value="Lampang">Lampang</option>
+                                <option value="Lamphun">Lamphun</option>
+                                <option value="Loei">Loei</option>
+                                <option value="Lopburi">Lopburi</option>
+                                <option value="Mae Hong Son">Mae Hong Son</option>
+                                <option value="Maha Sarakham">Maha Sarakham</option>
+                                <option value="Mukdahan">Mukdahan</option>
+                                <option value="Nakhon Nayok">Nakhon Nayok</option>
+                                <option value="Nakhon Pathom">Nakhon Pathom</option>
+                                <option value="Nakhon Phanom">Nakhon Phanom</option>
+                                <option value="Nakhon Ratchasima">Nakhon Ratchasima</option>
+                                <option value="Nakhon Sawan">Nakhon Sawan</option>
+                                <option value="Nakhon Si Thammarat">Nakhon Si Thammarat</option>
+                                <option value="Nan">Nan</option>
+                                <option value="Narathiwat">Narathiwat</option>
+                                <option value="Nong Bua Lamphu">Nong Bua Lamphu</option>
+                                <option value="Nong Khai">Nong Khai</option>
+                                <option value="Nonthaburi">Nonthaburi</option>
+                                <option value="Pathum Thani">Pathum Thani</option>
+                                <option value="Pattani">Pattani</option>
+                                <option value="Phang Nga">Phang Nga</option>
+                                <option value="Phatthalung">Phatthalung</option>
+                                <option value="Phayao">Phayao</option>
+                                <option value="Phetchabun">Phetchabun</option>
+                                <option value="Phetchaburi">Phetchaburi</option>
+                                <option value="Phichit">Phichit</option>
+                                <option value="Phitsanulok">Phitsanulok</option>
+                                <option value="Phra Nakhon Si Ayutthaya">Phra Nakhon Si Ayutthaya</option>
+                                <option value="Phrae">Phrae</option>
+                                <option value="Phuket">Phuket</option>
+                                <option value="Prachinburi">Prachinburi</option>
+                                <option value="Prachuap Khiri Khan">Prachuap Khiri Khan</option>
+                                <option value="Ranong">Ranong</option>
+                                <option value="Ratchaburi">Ratchaburi</option>
+                                <option value="Rayong">Rayong</option>
+                                <option value="Roi Et">Roi Et</option>
+                                <option value="Sa Kaeo">Sa Kaeo</option>
+                                <option value="Sakon Nakhon">Sakon Nakhon</option>
+                                <option value="Samut Prakan">Samut Prakan</option>
+                                <option value="Samut Sakhon">Samut Sakhon</option>
+                                <option value="Samut Songkhram">Samut Songkhram</option>
+                                <option value="Saraburi">Saraburi</option>
+                                <option value="Satun">Satun</option>
+                                <option value="Sing Buri">Sing Buri</option>
+                                <option value="Sisaket">Sisaket</option>
+                                <option value="Songkhla">Songkhla</option>
+                                <option value="Sukhothai">Sukhothai</option>
+                                <option value="Suphan Buri">Suphan Buri</option>
+                                <option value="Surat Thani">Surat Thani</option>
+                                <option value="Surin">Surin</option>
+                                <option value="Tak">Tak</option>
+                                <option value="Trang">Trang</option>
+                                <option value="Trat">Trat</option>
+                                <option value="Ubon Ratchathani">Ubon Ratchathani</option>
+                                <option value="Udon Thani">Udon Thani</option>
+                                <option value="Uthai Thani">Uthai Thani</option>
+                                <option value="Uttaradit">Uttaradit</option>
+                                <option value="Yala">Yala</option>
+                                <option value="Yasothon">Yasothon</option>
+                            </select>
+                            <select name="catagory" class="custom-select" id="catagory">
+                                <option value="ALL">All Catagories</option>
+                                <option value="RESTAURANT">Restaurants</option>
+                                <option value="SHOP">Shopping</option>
+                                <option value="ACCOMMODATION">Hotels</option>
+                            </select>
+                            <button id="btn" type="submit" class="btn dorne-btn mt-50 bg-white text-dark"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Explore Search Result -->
+            <div class="explore-search-result">
+                <!-- Single Features Area -->
+                <div class="single-features-area" style="display: none">
+                    <img class='pic' style="width:100%" onclick=map(lat[0]+lng[0]) src="">
+                    <div class="feature-content d-flex align-items-center justify-content-between">
+                        <div class="feature-title">
+                            <a class="url">
+                                <h5 class="name"></h5>
+                            </a>
+                            <p class="destination"></p>
+                        </div>
+                        <div class="feature-favourite">
+                            <a onclick=fav(arr,place_id[0],0)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Features Area -->
+                <div class="single-features-area" style="display: none">
+                    <img class='pic' style="width:100%" onclick=map(lat[1]+lng[1]) src="">
+                    <div class="feature-content d-flex align-items-center justify-content-between">
+                        <div class="feature-title">
+                            <a class="url">
+                                <h5 class="name"></h5>
+                            </a>
+                            <p class="destination"></p>
+                        </div>
+                        <div class="feature-favourite">
+                            <a onclick=fav(arr,place_id[1],1)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Features Area -->
+                <div class="single-features-area" style="display: none">
+                    <img class='pic' style="width:100%" onclick=map(lat[2]+lng[2]) src="">
+                    <div class="feature-content d-flex align-items-center justify-content-between">
+                        <div class="feature-title">
+                            <a class="url">
+                                <h5 class="name"></h5>
+                            </a>
+
+                            <p class="destination"></p>
+                        </div>
+                        <div class="feature-favourite">
+                            <a onclick=fav(arr,place_id[2],2)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Features Area -->
+                <div class="single-features-area" style="display: none">
+                    <img class='pic' style="width:100%" onclick=map(lat[3]+lng[3]) src="">
+                    <div class="feature-content d-flex align-items-center justify-content-between">
+                        <div class="feature-title">
+
+                            <a class="url">
+                                <h5 class="name"></h5>
+                            </a>
+
+                            <p class="destination"></p>
+                        </div>
+                        <div class="feature-favourite">
+                            <a onclick=fav(arr,place_id[3],3)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Features Area -->
+                <div class="single-features-area" style="display: none">
+                    <img class='pic' style="width:100%" onclick=map(lat[4]+lng[4]) src="">
+                    <div class="feature-content d-flex align-items-center justify-content-between">
+                        <div class="feature-title">
+                            <a class="url">
+                                <h5 class="name"></h5>
+                            </a>
+
+                            <p class="destination"></p>
+                        </div>
+                        <div class="feature-favourite">
+                            <a onclick=fav(arr,place_id[4],4)><i class="favicon fa fa-heart-o" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Explore Map Area -->
+        <div class="explore-map-area">
+            <div id="exploreGoogleMap"></div>
+        </div>
+    </section>
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap-4 js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- Bootstrap-Notify -->
+    <script src="js/bootstrap/bootstrap-notify.min.js"></script>
+    <!-- Bootstrap-Notify -->
+    <script src="js/bootstrap/bootstrap-notify.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/others/plugins.js"></script>
+    <!-- Api Explorer -->
+    <script src="js/api_explorer.js"></script>
+    <!-- Google Maps js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdVg54QthqEizFpV7yGjQCJfHRFP3PnW0"></script>
+    <script src="js/google-map/explore-map.js"></script>
+    <!-- Active JS -->
+    <script src="js/active.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+    <!-- Authen -->
+    <script src="js/authen.js"></script>
+    <!-- Api Favorite -->
+    <script src="js/api_favorite.js"></script>
+    <script>
+        setupexplorer();
+    </script>
+</body>
+</html>
