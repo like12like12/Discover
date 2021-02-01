@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title >Discover</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <!-- Core Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="css/responsive/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="dorne-load"></div>
+    </div>
+    <!-- ***** Search Form Area ***** -->
+    <div class="dorne-search-form d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-close-btn" id="closeBtn">
+                        <i class="pe-7s-close-circle" aria-hidden="true"></i>
+                    </div>
+                    <form action="#" method="get">
+                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Desire Destinations or Events">
+                        <input type="submit" class="d-none" value="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header_area" id="header">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <nav class="h-100 navbar navbar-expand-lg">
+                        <h1 class="nav-link" style="color:rgb(255, 255, 255)" href="/">Discover </h1>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
+                        <!-- Nav -->
+                        <div class="collapse navbar-collapse" id="dorneNav">
+                            <ul class="navbar-nav mr-auto" id="dorneMenu">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="explorer">Explore <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="favorite">Favorite <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact">Contact</a>
+                                </li>
+                            </ul>
+                            <!-- profile -->
+                            <div class="nav-link" id="navprofile" style="display: none;">
+                                <a href="#">Welcome name</a>
+                            </div>
+                            <!-- Sign in -->
+                            <div class="btn-group dorne-signin-btn" id="navsignin" style="display: none;">
+                                <a href="#"  class="dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign in  or  Sign up</a>
+                                <div class="dropdown-menu">
+                                    <form class="px-4 py-3">
+                                      <div class="form-group">
+                                        <label for="exampleDropdownFormEmail1">Email address</label>
+                                        <input type="email" class="form-control" id="emaillogin" placeholder="email@example.com" value="qwer@qwer.com">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleDropdownFormPassword1">Password</label>
+                                        <input type="password" class="form-control" id="passlogin" placeholder="Password" value="123456">
+                                      </div>
+                                      <!-- <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                        <label class="form-check-label" for="dropdownCheck">
+                                          Remember me
+                                        </label>
+                                      </div> -->
+                                      <button type="button" value="signin" name="signin" id="signin" class="btn dorne-btn">Sign in</button>
+                                    </form>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/register">New around here? Sign up</a>
+                                    <!-- <a class="dropdown-item" href="#">Forgot password?</a> -->
+                                </div>
+                            </div>
+                            <!-- Sign out -->
+                            <div class="dorne-signin-btn" id="navsignout">
+                                <a href="#">Sign out</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Welcome Area Start ***** -->
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 col-md-10">
+                    <div class="hero-content">
+                        <h2>Discover</h2>
+                        <h4>Find Nearby Place</h4>
+                    </div>
+                    <div class="hero-search-form">
+                        <!-- Tabs -->
+                        <div class="nav nav-tabs" id="heroTab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places" role="tab" aria-controls="nav-places" aria-selected="true">Places</a>
+                        </div>
+                        <!-- Tabs Content -->
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
+                                <h6>What are you looking for?</h6>
+                                <form action="explorer" method="get">
+                                    <input type="text" value="อาหาร" name="keyword" class="form-control custom-select" placeholder="Keyword">
+                                    <select name="destination" class="custom-select">
+                                        <option value="Bangkok" selected>Bangkok</option>
+                                        <option value="Amnat Charoen">Amnat Charoen</option>
+                                        <option value="Ang Thong">Ang Thong</option>
+                                        <option value="Bueng Kan">Bueng Kan</option>
+                                        <option value="Buriram">Buriram</option>
+                                        <option value="Chachoengsao">Chachoengsao</option>
+                                        <option value="Chai Nat">Chai Nat</option>
+                                        <option value="Chaiyaphum">Chaiyaphum</option>
+                                        <option value="Chanthaburi">Chanthaburi</option>
+                                        <option value="Chiang Mai">Chiang Mai</option>
+                                        <option value="Chiang Rai">Chiang Rai</option>
+                                        <option value="Chonburi">Chonburi</option>
+                                        <option value="Chumphon">Chumphon</option>
+                                        <option value="Kalasin">Kalasin</option>
+                                        <option value="Kamphaeng Phet">Kamphaeng Phet</option>
+                                        <option value="Kanchanaburi">Kanchanaburi</option>
+                                        <option value="Khon Kaen">Khon Kaen</option>
+                                        <option value="Krabi">Krabi</option>
+                                        <option value="Lampang">Lampang</option>
+                                        <option value="Lamphun">Lamphun</option>
+                                        <option value="Loei">Loei</option>
+                                        <option value="Lopburi">Lopburi</option>
+                                        <option value="Mae Hong Son">Mae Hong Son</option>
+                                        <option value="Maha Sarakham">Maha Sarakham</option>
+                                        <option value="Mukdahan">Mukdahan</option>
+                                        <option value="Nakhon Nayok">Nakhon Nayok</option>
+                                        <option value="Nakhon Pathom">Nakhon Pathom</option>
+                                        <option value="Nakhon Phanom">Nakhon Phanom</option>
+                                        <option value="Nakhon Ratchasima">Nakhon Ratchasima</option>
+                                        <option value="Nakhon Sawan">Nakhon Sawan</option>
+                                        <option value="Nakhon Si Thammarat">Nakhon Si Thammarat</option>
+                                        <option value="Nan">Nan</option>
+                                        <option value="Narathiwat">Narathiwat</option>
+                                        <option value="Nong Bua Lamphu">Nong Bua Lamphu</option>
+                                        <option value="Nong Khai">Nong Khai</option>
+                                        <option value="Nonthaburi">Nonthaburi</option>
+                                        <option value="Pathum Thani">Pathum Thani</option>
+                                        <option value="Pattani">Pattani</option>
+                                        <option value="Phang Nga">Phang Nga</option>
+                                        <option value="Phatthalung">Phatthalung</option>
+                                        <option value="Phayao">Phayao</option>
+                                        <option value="Phetchabun">Phetchabun</option>
+                                        <option value="Phetchaburi">Phetchaburi</option>
+                                        <option value="Phichit">Phichit</option>
+                                        <option value="Phitsanulok">Phitsanulok</option>
+                                        <option value="Phra Nakhon Si Ayutthaya">Phra Nakhon Si Ayutthaya</option>
+                                        <option value="Phrae">Phrae</option>
+                                        <option value="Phuket">Phuket</option>
+                                        <option value="Prachinburi">Prachinburi</option>
+                                        <option value="Prachuap Khiri Khan">Prachuap Khiri Khan</option>
+                                        <option value="Ranong">Ranong</option>
+                                        <option value="Ratchaburi">Ratchaburi</option>
+                                        <option value="Rayong">Rayong</option>
+                                        <option value="Roi Et">Roi Et</option>
+                                        <option value="Sa Kaeo">Sa Kaeo</option>
+                                        <option value="Sakon Nakhon">Sakon Nakhon</option>
+                                        <option value="Samut Prakan">Samut Prakan</option>
+                                        <option value="Samut Sakhon">Samut Sakhon</option>
+                                        <option value="Samut Songkhram">Samut Songkhram</option>
+                                        <option value="Saraburi">Saraburi</option>
+                                        <option value="Satun">Satun</option>
+                                        <option value="Sing Buri">Sing Buri</option>
+                                        <option value="Sisaket">Sisaket</option>
+                                        <option value="Songkhla">Songkhla</option>
+                                        <option value="Sukhothai">Sukhothai</option>
+                                        <option value="Suphan Buri">Suphan Buri</option>
+                                        <option value="Surat Thani">Surat Thani</option>
+                                        <option value="Surin">Surin</option>
+                                        <option value="Tak">Tak</option>
+                                        <option value="Trang">Trang</option>
+                                        <option value="Trat">Trat</option>
+                                        <option value="Ubon Ratchathani">Ubon Ratchathani</option>
+                                        <option value="Udon Thani">Udon Thani</option>
+                                        <option value="Uthai Thani">Uthai Thani</option>
+                                        <option value="Uttaradit">Uttaradit</option>
+                                        <option value="Yala">Yala</option>
+                                        <option value="Yasothon">Yasothon</option>
+                                    </select>
+                                    <select name="catagory" class="custom-select">
+                                        <option value="ALL" selected>All Catagories</option>
+                                        <option value="RESTAURANT">Restaurants</option>
+                                        <option value="SHOP">Shopping</option>
+                                        <option value="ACCOMMODATION">Hotels</option>
+                                    </select>
+                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true" ></i> Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Catagory Area Start ***** -->
+    <section class="dorne-catagory-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="all-catagories">
+                        <div class="row">
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md" onclick="window.location='#cities';">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.6s">
+                                    <div class="catagory-content">
+                                        <img src="img/core-img/icon-3.png">
+                                        <a>
+                                            <h6>City</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md" onclick="window.location='#hotels';">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.2s">
+                                    <div class="catagory-content">
+                                        <img src="img/core-img/icon-1.png">
+                                        <a>
+                                            <h6>Hotels</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Catagory Area -->
+                            <div class="col-12 col-sm-6 col-md" onclick="window.location='#restaurants';">
+                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.4s">
+                                    <div class="catagory-content">
+                                        <img src="img/core-img/icon-2.png">
+                                        <a>
+                                            <h6>Restaurants</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Area Start ***** -->
+    <section class="dorne-about-area section-padding-0-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-content text-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Editor Pick Area Start ***** -->
+    <section class="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100" style="background-image: url(img/bg-img/hero-2.jpg);" id="cities">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <span></span>
+                        <h4>Cities Recommended</h4>
+                        <p>Editor’s pick</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="img/bg-img/editor-1.jpg" onclick="window.location='explorer?keyword=&city=Bangkok&type=ALL';">
+                        <div class="editors-pick-info">
+                            <div class="places-total-destinations d-flex">
+                                <a href="explorer?keyword=&destination=Bangkok&catagory=ALL">Bangkok</a>
+                                <a href="#">Thailand</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.4s">
+                        <img src="img/bg-img/editor-2.jpg" onclick="window.location='explorer?keyword=&city=Nonthaburi&type=ALL';">
+                        <div class="editors-pick-info">
+                            <div class="places-total-destinations d-flex">
+                                <a href="explorer?keyword=&destination=Nonthaburi&catagory=ALL">Nonthaburi</a>
+                                <a href="#">Thailand</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.6s">
+                        <img src="img/bg-img/editor-3.jpg" onclick="window.location='explorer?keyword=&city=Ayutthaya&type=ALL';">
+                        <div class="editors-pick-info">
+                            <div class="places-total-destinations d-flex">
+                                <a href="explorer?keyword=&destination=Ayutthaya&catagory=ALL">Ayutthaya</a>
+                                <a href="#">Thailand</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Destinations Area Start ***** -->
+    <section class="dorne-features-destinations-area" id="hotels">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading dark text-center">
+                        <span></span>
+                        <h4 id="099">Featured Hotels</h4>
+                        <p>Editor’s pick</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="features-slides owl-carousel">
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img class="image" src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P02000185_3.jpeg">
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=ACCOMMODATION&id=P02000185"><h5 class="name">โรงแรมลันตานา รีสอร์ท</h5></a>
+                                    <p class="destination">กรุงเทพมหานคร</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img class="image" src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P02012360_1.jpg">
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=ACCOMMODATION&id=P02012360"><h5 class="name">เดอะ คันทรี่ไซด์ รีสอร์ท</h5></a>
+                                    <p class="destination">แม่ฮ่องสอน</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013844_1.jpg">
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=RESTAURANT&id=P08013844"><h5>กระบี่ ฟรอนท์ เบย์ รีสอร์ท</h5></a>
+                                    <p>กระบี่</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P02012357_3.jpg">
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=ACCOMMODATION&id=P02012357"><h5>กริณทร์ รีสอร์ต</h5></a>
+                                    <p>เพชรบูรณ์</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P02012342_2.jpg">
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=ACCOMMODATION&id=P02012357"><h5>เคียงจันทร์ รีสอร์ท</h5></a>
+                                    <p>ชุมพร</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Restaurant Area Start ***** -->
+    <section class="dorne-features-restaurant-area bg-default" id="restaurants">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <span></span>
+                        <h4>Featured Restaurants</h4>
+                        <p>Editor’s pick</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="features-slides owl-carousel">
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08012272_1.jpeg">
+
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=RESTAURANT&id=P08012272"><h5>ทรีทคาเฟ่ แอนด์ แฮงเอ้าท์</h5></a>
+                                    <p>กรุงเทพมหานคร</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P08013955_1.png">
+
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=RESTAURANT&id=P08013955"><h5>คาเฟ่ จาร์แดง</h5></a>
+                                    <p>กรุงเทพมหานคร</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P08013903_1.png">
+
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=RESTAURANT&id=P08013989"><h5>เซริว ซูชิ คาเฟ่ ศาลาแดง</h5></a>
+                                    <p>กรุงเทพมหานคร</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img src="https://tatapi.tourismthailand.org/tatfs/Image/CustomPOI/Picture/P08013963_1.png">
+
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=RESTAURANT&id=P08013963"><h5>นายน์บ้าน คาเฟ่และขนมไทย</h5></a>
+                                    <p>สงขลา</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Features Area -->
+                        <div class="single-features-area">
+                            <img src="https://tatapi.tourismthailand.org/tatfs/IMAGE/CustomPOI/Picture/P08013835_1.jpg">
+
+                            <div class="ratings-map-area d-flex">
+                            </div>
+                            <div class="feature-content d-flex align-items-center justify-content-between">
+                                <div class="feature-title">
+                                    <a href="single-listing?type=RESTAURANT&id=P08013835"><h5>คาเฟ่ จักรยาน</h5></a>
+                                    <p>กาญจนบุรี</p>
+                                </div>
+                                <div class="feature-favourite">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap-4 js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- Bootstrap-Notify -->
+    <script src="js/bootstrap/bootstrap-notify.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/others/plugins.js"></script>
+    <!-- Active JS -->
+    <script src="js/active.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+    <!-- Authen -->
+    <script src="js/authen.js"></script>
+</body>
+
+</html>
