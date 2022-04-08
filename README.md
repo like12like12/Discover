@@ -1,5 +1,6 @@
 ## Discover
 ##### Find Nearby Place.
+[Demo](https://like12like12.github.io/Discover/)
 ### Term Project (SP444 Advanced Web Programming) 
 #### Web Application
 ### Features
